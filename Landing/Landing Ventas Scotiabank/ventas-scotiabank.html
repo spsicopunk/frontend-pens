@@ -1,0 +1,1369 @@
+<!-- style owl carusel  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<!-- Web font -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- bootstrap select -->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+<style>
+
+:root{
+	--redPrim: #ED1C29;
+	--blueSec: #6680AD;
+	--blueLight: #3D78DD;
+    --grayDark: #333333;
+	--grayStripe: #ccc;
+	--fontRegular: 'Open Sans';
+	--fontBold: 'Open Sans'; 
+}	
+
+/*general styles*/
+.fontTitle{
+	font: 24px/1.3 var(--fontRegular);
+	color: var(--redPrim);
+}
+.fontSubTitle{
+	font: 20px/1.3 var(--fontRegular);
+	color: var(--redPrim);
+}
+.fontDestacado{
+	font: 18px/1.3 var(--fontRegular); 
+}	
+.fontTag{
+	font: 16px/1.3 var(--fontRegular); 
+}	
+.fontText{
+	font: 14px/1.3 var(--fontRegular);
+	color: var(--grayDark);
+}
+.fontMin{
+	font: 12px/1.3 var(--fontRegular); 
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/*diseño de botones*/
+.btn-prim {
+    background: var(--redPrim);
+    color: #fff;
+    font: bold 16px/1.3 var(--fontRegular);
+    border-radius: 8px;
+    padding: 10px 30px;
+    margin: 0 auto 10px;
+    display: table;
+    transition: all .3s;
+    outline: none;
+}
+.btn-prim:hover{
+    opacity: .7;
+    color: #fff;
+    outline: none;	
+}
+/*diseño de los checkbox*/
+
+/* Checkmark style starts */
+
+@-moz-keyframes dothabottomcheck {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 7px;
+    }
+}
+
+@-webkit-keyframes dothabottomcheck {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 7px;
+    }
+}
+
+@keyframes dothabottomcheck {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 7px;
+    }
+}
+
+@keyframes dothatopcheck {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 0;
+    }
+    100% {
+        height: 12px;
+    }
+}
+
+@-webkit-keyframes dothatopcheck {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 0;
+    }
+    100% {
+        height: 12px;
+    }
+}
+
+@-moz-keyframes dothatopcheck {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 0;
+    }
+    100% {
+        height: 12px;
+    }
+}
+
+input.check[type=checkbox] {
+    display: none;
+}
+
+.check-box {
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: 2px solid var(--redPrim);
+    border-radius: 0px;
+    position: relative;
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-transition: border-color ease 0.2s;
+    -o-transition: border-color ease 0.2s;
+    -webkit-transition: border-color ease 0.2s;
+    transition: border-color ease 0.2s;
+    cursor: pointer;
+    margin-right: 10px !important;
+}
+
+.check-box::before,
+.check-box::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    height: 0;
+    width: 3px;
+    background-color: #fff;
+    display: inline-block;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -o-transform-origin: left top;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    border-radius: 5px;
+    content: ' ';
+    -webkit-transition: opacity ease .5;
+    -moz-transition: opacity ease .5;
+    transition: opacity ease .5;
+}
+
+.check-box::before {
+    top: 13px;
+    left: 8px;
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.check-box::after {
+    top: 9px;
+    left: 2px;
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+input[type=checkbox]:checked + .check-box,
+.check-box.checked {
+    background: var(--redPrim);
+}
+
+input[type=checkbox]:checked + .check-box::after,
+.check-box.checked::after {
+    height: 50px;
+    -moz-animation: dothabottomcheck 0.2s ease 0s forwards;
+    -o-animation: dothabottomcheck 0.2s ease 0s forwards;
+    -webkit-animation: dothabottomcheck 0.2s ease 0s forwards;
+    animation: dothabottomcheck 0.2s ease 0s forwards;
+}
+
+input[type=checkbox]:checked + .check-box::before,
+.check-box.checked::before {
+    height: 120px;
+    -moz-animation: dothatopcheck 0.4s ease 0s forwards;
+    -o-animation: dothatopcheck 0.4s ease 0s forwards;
+    -webkit-animation: dothatopcheck 0.4s ease 0s forwards;
+    animation: dothatopcheck 0.4s ease 0s forwards;
+}
+
+
+/*Banner*/  
+
+.banner-ventas{
+	pointer-events: none;
+}
+.ban-v_item{
+	display: flex;
+    align-items: center;
+}
+
+.ban-v_content {
+    position: absolute;
+    padding: 10px 10px;
+    margin: 0 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 6px;
+}
+.ban-v_title{ 
+	margin: 0px;
+	text-align: center;
+}
+.ban-v_txt{
+	margin: 10px 0px  0px;	
+	text-align: center;
+    color: var(--redPrim);
+}
+
+
+/*bienvenida-venta*/
+
+.bie-v_item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+.bie-v_item img {
+    height: 30px;
+    margin: 8px 20px 10px 0px;
+    width: 100px;
+}
+.bie-v_img {
+    width: 100%;
+}
+.bie-v_subtitle {
+    margin: 0px 0px 20px;
+}
+.bie-v_title {
+    margin: 30px 0px 0px;
+    padding: 0 20px;
+}
+.bie-v_text {
+    padding-right: 10px;
+}
+.bie-v_content, .producto-venta {
+    display: table;
+    max-width: 1200px;
+    margin: 30px auto 0px;
+    width: 90%;
+}
+.bie-v_form {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+}
+.bie-v_form:after {
+	content: "";
+    background-position: top right;
+    position: absolute;
+    display: table;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    opacity: .4;
+    z-index: -1;
+}
+.bie-v_cont ul {
+    padding: 0;
+    margin-left: 17px;
+    color: var(--grayDark);
+    margin-top: 20px;
+}
+.bie-v_cont ul li{
+	margin-bottom: 10px;
+}
+.ventas-form {
+    max-width: 350px;
+    margin: 30px auto 0px;
+}
+.ventas-form label {
+    display: table;
+    color: var(--redPrim);
+    font-weight: bold;
+    border-radius: 4px;
+}
+.ventas-form .form-control, .ventas-form .dropdown-toggle, .bootstrap-select>.dropdown-toggle.bs-placeholder, .bootstrap-select>.dropdown-toggle.bs-placeholder:active, .bootstrap-select>.dropdown-toggle.bs-placeholder:focus, .bootstrap-select>.dropdown-toggle.bs-placeholder:hover {
+	border: 0px;
+    box-shadow: none;
+    border-bottom: 1px solid var(--redPrim);
+    border-radius: 0px;
+    padding: 6px 0px;
+    color: var(--grayDark);
+    background: none !important;
+}
+.bootstrap-select .dropdown-toggle:focus, .bootstrap-select>select.mobile-device:focus+.dropdown-toggle{
+	outline: none !important;
+}
+.ventas-form .dropdown-menu>.active>a, .ventas-form .dropdown-menu>.active>a:focus, .ventas-form .dropdown-menu>.active>a:hover{
+	background-color: var(--redPrim);
+}
+.ventas-form .form-control::-webkit-input-placeholder { /* Edge */
+  	color: var(--grayDark);
+}
+
+.ventas-form .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  	color: var(--grayDark);
+}
+
+.ventas-form .form-control::placeholder {
+  	color: var(--grayDark);
+}
+.term-check {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px;
+}
+.term {
+    color: var(--grayDark);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.bie-v_cont {
+    margin: 0;
+    padding: 0;
+}
+
+/*productos ventas*/
+.prod-v_content {
+    margin-top: 30px;
+    display: table;
+}
+.prod-v_tag-title {
+    margin: 0;
+    background: var(--redPrim);
+    color: #fff;
+    padding: 7px 14px;
+    display: table;
+    border-top-right-radius: 15px;
+}
+.prod-v_box {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 30px
+}
+.pro-ven_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    padding: 0 30px;
+    flex-direction: column;
+}
+.prod-v_cont, .cod-com_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0px 20px;
+}
+.prod-v_img {
+    height: 50px;
+}
+.prod-v_title {
+    color: var(--grayDark);
+    text-align: center;
+    margin: 0 15px;
+}
+.pro-ven_tabs {
+    border-bottom: 3px solid var(--redPrim);
+}
+.prod-steps_list {
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    justify-content: flex-start;
+    list-style-type: none;
+    border: 1px solid var(--grayStripe);
+    border-top-right-radius: 10px;
+}
+
+.prod-steps_list li {
+    text-align: center;
+    cursor: pointer;
+    color: var(--grayStripe);
+    padding: 10px 20px;
+    border-top-right-radius: 10px;
+    border-right: 1px solid var(--grayStripe);
+    font-size: 13px;
+}
+.prod-steps_list li:last-child {
+    border: 0px;
+}
+.prod-steps_list li.active {
+    background: var(--redPrim);
+    border-top-right-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+.prod-steps_boxInfo {
+    background: #F9F7F4;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+.prod-items {
+    margin: 15px 0px;
+    display: none;
+}
+.prod-items_cont {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    margin: 10px 0px;
+}
+.prod-items_img {
+    height: 50px;
+    width: 50px;
+    margin: 0 20px;
+}
+.prod-items_box {
+    padding-right: 20px;
+}
+.prod-items_title {
+    margin-bottom: 10px;
+}
+.prod-v_button {
+    margin-bottom: 30px;
+}
+
+/*codigo compra*/
+
+.codigo-compra {
+    max-width: 90%;
+    margin: 0 auto;
+    display: table;
+}
+.prod-v_info {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.cod-com_cont {
+    margin: 0px 0px 20px;
+    display: table;
+}
+.cod-com_box {
+    padding: 20px;
+    background: #F2F6F8;
+    border-radius: 20px;
+    margin-top: 40px;
+}
+.cod-com_box_title {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto 20px;
+    color: var(--grayDark)
+}
+.cod-com_code-security {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: 300px;
+}
+.cod-com_code-security .def-txt-input {
+    margin: 0 2px;
+    text-align: center;
+    outline: none;
+    border-radius: 4px;
+    border: 0px;
+    background: var(--grayStripe);
+    color: #fff;
+    font: 30px/1.3 var(--fontRegular);
+    height: 100%;
+    width: calc(100% / 6 - 12px);
+    padding: 0px 0 5px;
+}
+.def-txt-input::-webkit-input-placeholder { /* Edge */
+  	color: #fff;
+}
+
+.def-txt-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  	color: #fff;
+}
+
+.def-txt-input::placeholder {
+  	color: #fff;
+}
+.producto-venta, .codigo-compra, .producto-venta{
+	display: none;
+}
+
+/*oferta bienvenida*/
+
+.bie-ofert {
+    display: table;
+    width: 100%;
+}
+.bie-ofert_box .prod-items_cont {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.bie-ofert_subtitle {
+    color: var(--grayDark);
+    margin: 30px 0px;
+    padding: 0 10px;
+}
+.bie-ofert_box {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    border-radius: 4px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top: 2px solid var(--redPrim);
+    margin-bottom: 30px;
+}
+.bie-ofert_txt {
+    width: 80%;
+    margin: 0 auto 20px;
+}
+.bie-ofert_list {
+    padding: 0;
+    margin: 0 auto;
+    display: table;
+    width: 70%;
+}
+.bie-ofert_list li {
+    margin-bottom: 10px;
+}
+.bie-ofert_list li img {
+    width: 100px;
+    margin: 0 0 0 5px;
+}
+.bie-ofert_sub {
+    width: 80%;
+    margin: 0 auto 20px;
+    color: var(--redPrim);
+}
+.bie-ofert_img-group {
+    width: 80%;
+    margin: 0 auto 20px;
+    display: table;
+}
+.bie-ofert_img {
+    display: table;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.bie-ofert_min{
+    width: auto;
+}
+.bie-ofert_img:last-child {
+    margin-bottom: 0px;
+}
+
+/* producto en venta */
+
+.pro-ven_cobert {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+}
+.pro-ven_ben-cont * {
+    color: var(--grayDark);
+}
+.pro-ven_beneficio {
+    display: flex;
+    margin: 0 auto;
+    padding: 30px 0px 0px;
+    justify-content: center;
+    width: 80%;
+}
+.pro-ven_beneficio img {
+    margin-right: 20px;
+}
+.pro-ven_cobert .bie-v_item {
+    width: 80%;
+    margin: 20 auto 40px;
+}
+
+.prod-steps_box {
+    margin-bottom: 20px;
+}
+.bord-box {
+    border-top: 1px solid var(--grayStripe);
+    width: 90%;
+    margin: 0 auto;
+    display: table;
+    float: none;
+}
+.bord-box:first-child{
+    border: none;
+}
+/*modal*/
+
+.modal-ventas {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+}
+.modal-ventas:after {
+    content: "";
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--grayDark);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    opacity: .8;
+}
+.modal-v_body {
+    background: #fff;
+    z-index: 1;
+    padding: 20px 40px;
+    border-radius: 22px;
+    max-width: 430px;
+    width: 90%;
+}
+.modal-v_title {
+    color: var(--redPrim);
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.btn-link {
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--redPrim);
+}
+@media only screen and (min-width: 768px){
+
+	/*general styles*/
+
+	.fontTitle{
+		font: 34px/1.3 var(--fontRegular);
+	}
+	.fontSubTitle{
+		font: 30px/1.3 var(--fontRegular);
+	}
+	.fontDestacado{
+		font: 24px/1.3 var(--fontRegular); 
+	}		
+	.fontTag{
+		font: 20px/1.3 var(--fontRegular); 
+	}		
+	.fontText{
+		font: 16px/1.3 var(--fontRegular);
+	} 	
+	.fontMin{
+		font: 14px/1.3 var(--fontRegular); 
+	}
+
+	/*banner*/
+
+	.ban-v_content {
+	    max-width: 500px;
+	    left: 5%;
+	    background: initial;
+	    margin: 0;
+	}
+	.ban-v_title,.ban-v_txt{
+		text-align: left;
+		margin-bottom: 20px;
+	}
+	
+	/*Bienvenida-venta*/
+	.bie-v_title{
+		margin-bottom: 50px;
+	}	
+    .bie-v_item {
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    .bie-ofert_subtitle{
+        margin-bottom: 50px;
+        margin-top: 0px;
+    }
+    
+	/*productos ventas*/
+
+	.bie-v_title {
+	    margin: 40px 0px 0px;
+	}	
+	.prod-v_content {
+		margin-top: 50px;
+	}
+
+	/*codigo compra*/
+	.prod-v_info {
+	    margin-bottom: 40px;
+	}	
+	.cod-com_box{
+		margin-top: 110px;
+	}
+
+	.cod-com_code-security{
+		max-width: 500px;
+		height: 70px; 
+	}
+	.cod-com_button {
+	    margin-bottom: 40px;
+	    margin-top: 60px;
+	}
+    /* producto en venta */
+    .pro-ven_cobert{
+        flex-direction: row;
+        align-items: center;
+        min-height: 500px;
+    }
+    .pro-ven_cobert .bie-v_item {
+        width: 80%;
+        margin: 20 auto 40px;
+    }    
+    .pro-ven_beneficio{
+        width: 100%;
+    }
+    .bord-box{
+        border: none;
+        max-height: 100%;
+        float: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .bord-box:first-child {
+        border: none;
+        border-right: 1px solid var(--grayStripe);
+    }
+    .prod-steps_list li{
+        font: 20px/1.3 var(--fontRegular);
+    }
+    .pro-ven_box {
+        flex-direction: row;
+        padding: 0 6%;
+        align-items: center;
+    }
+    .prod-v_button, .prod-steps_box{
+        margin: 0;
+    } 
+    .prod-v_cont{
+        padding: 30px 0px;
+    }
+    .bord-box .prod-items_box {
+        padding-right: 20px;
+        min-width: 260px;
+    }  
+
+}
+@media only screen and (min-width: 992px){
+	.bie-beneficio img {
+		width: 90%;
+		transform: scale(1.1);
+		position: relative;
+		top: -80px;
+		margin-top: -80px;
+	}	
+    .prod-v_info{
+        flex-direction: row;
+    }
+    .cod-com_title {
+        justify-content: flex-start;
+        transform: scale(1.3);
+        margin-left: 18%;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }       
+}
+</style>
+
+<section class="landing-ventas">
+
+	<!-- Banner -->
+	<section class="banner-ventas owl-carousel" id="cont-carousel">
+		<div class="ban-v_item">
+			<img src="./img/banner_ventas.png" alt="">
+			<div class="ban-v_content">
+				<h3 class="ban-v_title fontSubTitle">En estos momentos <b>lo más importante</b> es el bienestar y estabilidad tuya y el de tu familia.</h3>
+				<p class="ban-v_txt fontText">Protégete de forma <b>fácil y sin salir de tu casa.</b></p>
+			</div>
+		</div>		
+	</section>
+
+	<!-- ventas content -->
+	<section class="bienvenida-venta">
+		<div class="bie-v_content">
+		  <div class="col-xs-12 col-sm-6">
+		  	 <h3 class="bie-v_subtitle fontSubTitle"><b>Protégete con <br>nustros seguros</b></h3>
+             <p class="bie-v_text fontText"><b>Hasta el mes de Julio accede <br>de forma gratuita a:</b></p>
+		  	 <div class="bie-v_item">
+		  	 	<div class="bie-v_cont col-md-6">
+		  	 	    <img src="./img/coursera.svg">
+		  	 		<p class="bie-v_text fontText">Mejor plataforma de educación Online Costo regular $120.000/mes</p>
+		  	 	</div>
+                <div class="bie-v_cont col-md-6">
+                    <img src="./img/instafit.svg">
+                    <p class="bie-v_text fontText">Mejor plataforma ejercicios Costo regular $25.000/mes</p>
+                </div>
+                <div class="bie-v_cont col-md-6">
+                    <img src="./img/1d.svg">
+                    <p class="bie-v_text fontText">Consultas médicas online Costo regular $15.000/mes</p>
+                </div>
+                <div class="bie-v_cont col-md-6">
+                    <p class="bie-v_text fontText"><b>+ Más beneficios</b> (sujeto al producto seleccionado)</p>
+                </div>                                                
+		  	 </div>	  	
+             <img src="./img/fondo-cell.png" alt="Beneficios Scotiabank" class="bie-v_img hidden-xs">	  	 
+		  </div>
+		  <div class="col-xs-12 col-sm-6 ">
+		  	 <div class="bie-v_form">
+		  	 	<h3 class="bie-v_form-title fontTitle text-center"><b>Te damos la bienvenida</b> <br><span class="bie-v_form-subtitle fontText">Por favor ingresa tus datos personales.</span></h3>
+		  	 	<form action="submit" id="ventas-info" class="ventas-form">
+				  <div class="form-group">
+				    <label class="fontText" for="name">Nombre y Apellido</label>
+				    <input type="text" class="form-control" id="name" placeholder="Cristian Rodríguez">
+				  </div>
+				  <div class="form-group">
+				    <label class="fontText" for="tipo-doc">Tipo de Documento</label>
+					<select class="selectpicker" data-width="100%" title="Tipo de documento" id="tipo-doc">
+					  <option>CC</option>
+					  <option>TI</option>
+					  <option>TE</option>
+					</select>				    
+				  </div>
+				  <div class="form-group">
+				    <label class="fontText" for="doc">Número de Documento</label>
+				    <input type="text" class="form-control" id="doc" placeholder="1014186409">
+				  </div>				  
+				  <div class="form-group">
+				    <label class="fontText" for="tipo-doc">Actividad Ecónomica</label>
+					<select class="selectpicker" data-width="100%" title="Independiente" id="tipo-doc">
+					  <option>Asalariado</option>
+					  <option>Independiente</option>
+					  <option>Pensionado </option>
+					</select>				    
+				  </div>
+				  <div class="form-group">
+				    <label class="fontText" for="moment">Momento de Vida</label>
+					<select class="selectpicker" data-width="100%" title="Elige tu Estado Cívil" id="moment">
+					  <option>Casado</option>
+					  <option>Soltero</option> 
+					</select>				    
+				  </div>
+				  <div class="form-group">
+				    <label class="fontText" for="has-child">¿Tiene hijos?</label>
+					<select class="selectpicker" data-width="100%" title="Elige tu respuesta" id="has-child">
+					  <option>Si</option>
+					  <option>No</option>
+					</select>				    
+				  </div>
+				  <div class="form-group">
+				    <label class="fontText" for="has-home">¿Vivienda Propia o en arriendo?</label>
+					<select class="selectpicker" data-width="100%" title="Elige tu respuesta" id="has-home">
+					  <option>Propia</option>
+					  <option>Arriendo</option>
+					</select>				    
+				  </div>				  				  				  				  
+				  <div class="terminos">
+                     <div class="term-check">
+                     	<input type="checkbox" class="check" id="cbtest" name="cbtest">
+                     	<label for="cbtest" class="check-box"></label>
+                     	<p class="term">Entiendo y acepto los <b>Términos y condiciones</b></p>
+                     	<input type="hidden" class="form-control input-primario style-input" id="cbtest_txt" name="cbtest_txt" value="1">
+                     </div>
+                  </div>
+				  <a href="#" class="btn btn-prim step2">Comprar seguro</a>		  	 		
+		  	 	</form>
+		  	 </div>	
+		  </div>
+            <div class="bie-ofert">
+                <h3 class="bie-ofert_subtitle fontTitle text-center"><b>Nuestra oferta de producto</b></h3>       
+                <div class="bie-ofert_content">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="bie-ofert_box">
+                            <div class="prod-items_cont">
+                                <img src="./img/coberturas/shield.svg" class="prod-items_img" alt="item producto">
+                                <div class="prod-items_box">
+                                    <h3 class="prod-items_title fontSubTitle"><b>Protección Empleados</b></h3>
+                                </div>                     
+                            </div>
+                            <p class="bie-ofert_txt fontText">Protegemos y potencializamos tu perfil profesional con tu seguro tienes acceso a una plataforma donde podrás:</p>
+                            <ul class="bie-ofert_list">
+                                <li class="fontText">Consultoría laboral</li>
+                                <li class="fontText">pruebas psicotécnicas</li>
+                                <li class="fontText">Plataforma de empleo</li>
+                                <li class="fontText">Acceso a cursos online certificados</li>
+                                <li class="fontText">Herramienta de diseño hoja de vida</li>
+                            </ul>
+                            <h4 class="fontDestacado bie-ofert_sub"><b>Tu aprendizaje</b></h4>
+                            <p class="bie-ofert_txt fontText">Acceso a las mejores universidades del mundo, a través de Coursera.</p>
+                            <div class="bie-ofert_img-group">
+                                <img src="./img/coursera.svg" class="bie-ofert_img bie-ofert_min" alt="asociado">
+                                <img src="./img/grupo1.svg" class="bie-ofert_img" alt="asociado">
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="bie-ofert_box">
+                            <div class="prod-items_cont">
+                                <img src="./img/coberturas/fraude.svg" class="prod-items_img" alt="item producto">
+                                <div class="prod-items_box">
+                                    <h3 class="prod-items_title fontSubTitle"><b>Protección fraude</b></h3>
+                                </div>                     
+                            </div>
+                            <p class="bie-ofert_txt fontText">Cuidamos tu tranquilidad, por eso diseñamos unos servicios que te ayudarán a cuidar tus finanzas personales.</p>
+                            <ul class="bie-ofert_list">
+                                <li class="fontText">Educación Financiera</li>
+                                <li class="fontText">Asesoría legal</li>
+                                <li class="fontText">Credit lock</li>
+                            </ul>
+                            <h4 class="fontDestacado bie-ofert_sub"><b>Score y reporte <br> financiero</b></h4>
+                            <p class="bie-ofert_txt fontText">Podrás ver y comprender toda la información reportada por las entidades con las que has tenido algún vínculo financiero, comercial o de servicios.</p>
+                            <div class="bie-ofert_img-group">
+                                <img src="./img/grupo2.svg" class="bie-ofert_img" alt="asociado">
+                            </div>    
+                        </div>                        
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="bie-ofert_box">
+                            <div class="prod-items_cont">
+                                <img src="./img/coberturas/life.svg" class="prod-items_img" alt="item producto">
+                                <div class="prod-items_box">
+                                    <h3 class="prod-items_title fontSubTitle"><b>Protección Independientes</b></h3>
+                                </div>                     
+                            </div>
+                            <p class="bie-ofert_txt fontText">Creemos en ti, y en tus ideas para emprender. Disfruta los servicios que diseñamos para impulsar tus ideas de negocio.</p>
+                            <ul class="bie-ofert_list">
+                                <li class="fontText">Asesoria legal</li>
+                                <li class="fontText">Aprende <img src="./img/coursera.svg" class="bie-ofert_txt" alt="asociado"></li>
+                                <li class="fontText">Market place emprendedores</li>
+                                <li class="fontText">Personal branding y marketing digital</li>
+                            </ul>
+                            <h4 class="fontDestacado bie-ofert_sub"><b>Networking y coworking</b></h4>
+                            <p class="bie-ofert_txt fontText">Comunidad para conectar y cocrear nuevas ideas de negocios. Eventos y actividades de innovación.</p>
+                            <div class="bie-ofert_img-group">
+                                <img src="./img/grupo2.svg" class="bie-ofert_img" alt="asociado">
+                            </div>    
+                        </div>                        
+                    </div>
+                </div>     
+            </div>   
+		</div>	
+	</section>
+
+	<!-- producto ventas -->
+	<section class="producto-venta">
+        <h3 class="bie-ofert_subtitle fontTitle text-center"><b>Te presentamos las mejores ofertas de protección.</b></h3> 
+        <div class="pro-ven_tabs">
+            <ul class="prod-steps_list">
+                <li alt="plan1" class="fontTag active">El producto ideal</li>
+                <li alt="plan2" class="fontTag">Segunda mejor opción</li>
+                <li alt="plan3" class="fontTag">Tercera Mejor opción</li>
+             </ul>   
+        </div>
+        <div class="pro-ven_box">
+              <div class="prod-v_cont">
+                <img src="./img/coberturas/fraude-desempleo.svg" alt="Icono de producto" class="prod-v_img">
+                <span class="prod-v_title fontDestacado"><b>Desempleo <br>Fraude</b></span>
+              </div>
+              <div class="prod-steps_box">
+                  <span class="prod-steps_value fontText"><b>VALOR MENSUAL</b></span>
+                  <span class="prod-steps_value fontText"><b>$19.000</b></span>
+              </div>
+              <a href="#" class="prod-v_button btn btn-prim">Lo Quiero</a>
+        </div>
+        <!-- plan1 -->
+        <div class="pro-ven_cobert plan1">
+            <div class="col-xs-12 col-md-6 bord-box">
+                <div class="pro-ven_beneficio">
+                    <img src="./img/coberturas/ecosistemas.svg" alt="ecosistema">
+                    <div class="pro-ven_ben-cont">
+                        <h3 class="fontSubTitle"><b>Ecosistemas</b></h3>
+                        <p class="fontDestacado">Beneficios adicionales a tu seguro.</p>
+                    </div>
+                </div>
+                 <div class="bie-v_item">
+                    <div class="bie-v_cont col-md-6">
+                        <img src="./img/coursera.svg">
+                        <p class="bie-v_text fontText">Mejor plataforma de educación Online Costo regular $120.000/mes</p>
+                    </div>
+                    <div class="bie-v_cont col-md-6">
+                        <img src="./img/instafit.svg">
+                        <p class="bie-v_text fontText">Mejor plataforma ejercicios Costo regular $25.000/mes</p>
+                    </div>
+                    <div class="bie-v_cont col-md-6">
+                        <img src="./img/1d.svg">
+                        <p class="bie-v_text fontText">Consultas médicas online Costo regular $15.000/mes</p>
+                    </div>
+                    <div class="bie-v_cont col-md-6">
+                        <img src="./img/coberturas/mask.svg">
+                        <p class="bie-v_text fontText"><b>+ Más beneficios</b> (sujeto al producto seleccionado)</p>
+                    </div>                                                
+                 </div>                     
+            </div>
+            <div class="col-xs-12 col-md-6 bord-box">
+                <div class="prod-items_cont">
+                    <img src="./img/coberturas/enfermedades-graves.svg" class="prod-items_img" alt="item producto">
+                    <div class="prod-items_box">
+                        <h3 class="prod-items_title fontText"><b>Enfermedades graves</b></h3>
+                        <p class="prod-items_txt fontMin">6 cuotas hasta $4.000.000</p>
+                    </div>
+                </div>
+                <div class="prod-items_cont">
+                    <img src="./img/coberturas/desempleo.svg" class="prod-items_img" alt="item producto">
+                    <div class="prod-items_box">
+                        <h3 class="prod-items_title fontText"><b>Desempleo involuntario</b></h3>
+                        <p class="prod-items_txt fontMin">6 cuotas hasta $4.000.000</p>
+                    </div>
+                </div>   
+                <div class="prod-items_cont">
+                    <img src="./img/coberturas/compra-protegida.svg" class="prod-items_img" alt="item producto">
+                    <div class="prod-items_box">
+                        <h3 class="prod-items_title fontText"><b>Compra Portegida</b></h3>
+                        <p class="prod-items_txt fontMin">El pago de hasta $ 1.500.000</p>
+                    </div>
+                </div>
+                <div class="prod-items_cont">
+                    <img src="./img/coberturas/reposicion-llaves.svg" class="prod-items_img" alt="item producto">
+                    <div class="prod-items_box">
+                        <h3 class="prod-items_title fontText"><b>Reposición Doc./Llaves Bolso</b></h3>
+                        <p class="prod-items_txt fontMin">El pago de hasta $100.000 c/u</p>
+                    </div>
+                </div>  
+                <div class="prod-items_cont">
+                    <img src="./img/coberturas/cajero.svg" class="prod-items_img" alt="item producto">
+                    <div class="prod-items_box">
+                        <h3 class="prod-items_title fontText"><b>Hurto en Cajero</b></h3>
+                        <p class="prod-items_txt fontMin">El pago de hasta $100.000</p>
+                    </div>
+                </div>
+                <div class="prod-items_cont">
+                    <img src="./img/coberturas/compra-protegida.svg" class="prod-items_img" alt="item producto">
+                    <div class="prod-items_box">
+                        <h3 class="prod-items_title fontText"><b>Garantía Extendida</b></h3>
+                        <p class="prod-items_txt fontMin">El pago de hasta $1.000.000</p>
+                    </div>
+                </div>  
+                <div class="prod-items_cont">
+                    <img src="./img/coberturas/utilizacion-forzada.svg" class="prod-items_img" alt="item producto">
+                    <div class="prod-items_box">
+                        <h3 class="prod-items_title fontText"><b>Utilización forzada</b></h3>
+                        <p class="prod-items_txt fontMin">El pago de hasta $100.000</p>
+                    </div>
+                </div>                                                                
+            </div>
+        </div>
+        <!-- plan2 -->
+        <div class="pro-ven_cobert plan2">
+            <div class="col-xs-12 col-md-6 bord-box">
+                <div class="pro-ven_beneficio">
+                    <img src="./img/coberturas/ecosistemas.svg" alt="ecosistema">
+                    <div class="pro-ven_ben-cont">
+                        <h3 class="fontSubTitle"><b>Ecosistemas</b></h3>
+                        <p class="fontDestacado">Beneficios adicionales a tu seguro.</p>
+                    </div>
+                </div>
+                 <div class="bie-v_item">
+                    <div class="bie-v_cont col-md-6">
+                        <img src="./img/coursera.svg">
+                        <p class="bie-v_text fontText">Mejor plataforma de educación Online Costo regular $120.000/mes</p>
+                    </div>
+                    <div class="bie-v_cont col-md-6">
+                        <img src="./img/instafit.svg">
+                        <p class="bie-v_text fontText">Mejor plataforma ejercicios Costo regular $25.000/mes</p>
+                    </div>
+                    <div class="bie-v_cont col-md-6">
+                        <img src="./img/1d.svg">
+                        <p class="bie-v_text fontText">Consultas médicas online Costo regular $15.000/mes</p>
+                    </div>                                               
+                 </div>                     
+            </div>
+            <div class="col-xs-12 col-md-6 bord-box">
+                <div class="prod-items_cont">
+                    <img src="./img/coberturas/enfermedades-graves.svg" class="prod-items_img" alt="item producto">
+                    <div class="prod-items_box">
+                        <h3 class="prod-items_title fontText"><b>Enfermedades graves</b></h3>
+                        <p class="prod-items_txt fontMin">6 cuotas hasta $4.000.000</p>
+                    </div>
+                </div>
+                <div class="prod-items_cont">
+                    <img src="./img/coberturas/desempleo.svg" class="prod-items_img" alt="item producto">
+                    <div class="prod-items_box">
+                        <h3 class="prod-items_title fontText"><b>Desempleo involuntario</b></h3>
+                        <p class="prod-items_txt fontMin">6 cuotas hasta $4.000.000</p>
+                    </div>
+                </div>                 
+            </div>
+        </div>        
+        <!-- plan 3 -->
+        <div class="pro-ven_cobert plan3">
+            <div class="col-xs-12 col-md-6 bord-box">
+                <div class="pro-ven_beneficio">
+                    <img src="./img/coberturas/ecosistemas.svg" alt="ecosistema">
+                    <div class="pro-ven_ben-cont">
+                        <h3 class="fontSubTitle"><b>Ecosistemas</b></h3>
+                        <p class="fontDestacado">Beneficios adicionales a tu seguro.</p>
+                    </div>
+                </div>
+                 <div class="bie-v_item">
+                    <div class="bie-v_cont col-md-6">
+                        <img src="./img/coursera.svg">
+                        <p class="bie-v_text fontText">Mejor plataforma de educación Online Costo regular $120.000/mes</p>
+                    </div>
+                    <div class="bie-v_cont col-md-6">
+                        <img src="./img/instafit.svg">
+                        <p class="bie-v_text fontText">Mejor plataforma ejercicios Costo regular $25.000/mes</p>
+                    </div>                                          
+                 </div>                     
+            </div>
+            <div class="col-xs-12 col-md-6 bord-box">
+                <div class="prod-items_cont">
+                    <img src="./img/coberturas/enfermedades-graves.svg" class="prod-items_img" alt="item producto">
+                    <div class="prod-items_box">
+                        <h3 class="prod-items_title fontText"><b>Enfermedades graves</b></h3>
+                        <p class="prod-items_txt fontMin">6 cuotas hasta $4.000.000</p>
+                    </div>
+                </div>             
+            </div>
+        </div>        
+	</section>
+
+	<!-- codigo compra -->
+
+	<section class="codigo-compra">
+		<div class="prod-v_info">
+			<div class="col-xs-12 col-md-6">
+				<div class="cod-com_title">
+					  <img src="./img/coberturas/fraude-desempleo.svg" alt="Icono de producto" class="prod-v_img">
+					  <span class="prod-v_title fontDestacado"><b>Desempleo <br>Fraude</b></span>
+				</div>					
+				<div class="cod-com_cont">
+					<div class="prod-items_cont col-xs-12 col-sm-12 col-md-6">
+						<img src="./img/coberturas/ecosistemas.svg" class="prod-items_img" alt="item producto">
+						<div class="prod-items_box">
+							<h3 class="prod-items_title fontText"><b>Ecosistemas</b></h3>
+							<p class="prod-items_txt fontMin">Beneficios adicionales a tu seguro.</p>
+						</div>
+					</div>
+					<div class="prod-items_cont col-xs-12 col-sm-12 col-md-6">
+						<img src="./img/coberturas/enfermedades-graves.svg" class="prod-items_img" alt="item producto">
+						<div class="prod-items_box">
+							<h3 class="prod-items_title fontText"><b>Enfermedades graves</b></h3>
+							<p class="prod-items_txt fontMin">Te apoyamos con el pago de 6 cuotas hasta $4.000.00</p>
+						</div>
+					</div>
+					<div class="prod-items_cont col-xs-12 col-sm-12 col-md-6">
+						<img src="./img/coberturas/desempleo.svg" class="prod-items_img" alt="item producto">
+						<div class="prod-items_box">
+							<h3 class="prod-items_title fontText"><b>Desempleo involuntario</b></h3>
+							<p class="prod-items_txt fontMin">Te apoyamos con el pago de 6 cuotas hasta $4.000.00</p>
+						</div>
+					</div>
+					<div class="prod-items_cont col-xs-12 col-sm-12 col-md-6">
+						<img src="./img/coberturas/cajero.svg" class="prod-items_img" alt="item producto">
+						<div class="prod-items_box">
+							<h3 class="prod-items_title fontText"><b>Hurto en Cajero</b></h3>
+							<p class="prod-items_txt fontMin">Te apoyamos con el pago de hasta $100.000 c/u</p>
+						</div>
+					</div>
+					<div class="prod-items_cont col-xs-12 col-sm-12 col-md-6">
+						<img src="./img/coberturas/utilizacion-forzada.svg" class="prod-items_img" alt="item producto">
+						<div class="prod-items_box">
+							<h3 class="prod-items_title fontText"><b>Utilización forzada</b></h3>
+							<p class="prod-items_txt fontMin">Te apoyamos con el pago de hasta $100.000 c/u</p>
+						</div>
+					</div>
+					<div class="prod-items_cont col-xs-12 col-sm-12 col-md-6">
+						<img src="./img/coberturas/reposicion-llaves.svg" class="prod-items_img" alt="item producto">
+						<div class="prod-items_box">
+							<h3 class="prod-items_title fontText"><b>Reposición Doc./Llaves Bolso</b></h3>
+							<p class="prod-items_txt fontMin">Te apoyamos con el pago de hasta $100.000 c/u</p>
+						</div>
+					</div>
+					<div class="prod-items_cont col-xs-12 col-sm-12 col-md-6">
+						<img src="./img/coberturas/compra-protegida.svg" class="prod-items_img" alt="item producto">
+						<div class="prod-items_box">
+							<h3 class="prod-items_title fontText"><b>Compra Portegida</b></h3>
+							<p class="prod-items_txt fontMin">Te apoyamos con el pago de hasta $ 1.500.000</p>
+						</div>
+					</div>
+					<div class="prod-items_cont col-xs-12 col-sm-12 col-md-6">
+						<img src="./img/coberturas/garantia-extendida.svg" class="prod-items_img" alt="item producto">
+						<div class="prod-items_box">
+							<h3 class="prod-items_title fontText"><b>Garantía Extendida</b></h3>
+							<p class="prod-items_txt fontMin">Te apoyamos con el pago de hasta $1.000.000</p>
+						</div>
+					</div>																																										
+				</div>			
+				
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<div class="cod-com_box">
+					<h3 class="cod-com_box_title fontTitle">Hemos enviado un <b>código de seguridad</b> a tu celular/email para confirmar tu compra</h3>
+					<div class="cod-com_code-security">
+						<input type="text" class="def-txt-input" name="chars[1]" placeholder="-">
+						<input type="text" class="def-txt-input" name="chars[2]" placeholder="-">
+						<input type="text" class="def-txt-input" name="chars[3]" placeholder="-">
+						<input type="text" class="def-txt-input" name="chars[4]" placeholder="-">
+						<input type="text" class="def-txt-input" name="chars[5]" placeholder="-">
+						<input type="text" class="def-txt-input" name="chars[6]" placeholder="-">						
+					</div>
+					<a href="#" class="cod-com_button btn btn-prim open-modal">Confirmar código</a>
+				</div>
+			</div>
+			
+		</div>
+	</section>
+
+	<!-- modales -->
+
+	<div class="modal-ventas">
+		<div class="modal-v_body">
+		     <h3 class="modal-v_title fontDestacado"><b>Bienvenido a un mundo <br>protegido con Scotiabank <br>Colpatria y Cardif Seguros.</b></h3>
+		     <p class="modal-v_text fontText">Te hemos enviado un Email y SMS donde encontraras todas la información de tu seguro de desempleo.</p>
+		     <a href="#" alt="close" class="btn-link fontText"><b>CERRAR</b></a>			
+		</div>
+	</div>
+	
+
+</section>		
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<!-- bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- bootstrap select -->
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+<!-- owl carusel --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> 
+
+<script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=onRecaptchaLoadCallback"></script>
+
+<script>
+
+	// pasos
+
+	$(".step2").click(function(){
+		$(".bienvenida-venta").hide();
+		$(".producto-venta").fadeIn();
+	});
+	$(".prod-v_button").click(function(){
+		$(".producto-venta").hide();
+		$(".codigo-compra").fadeIn();
+	});
+	// carusel
+
+	$('#cont-carousel').owlCarousel({
+	    loop:false,
+	    margin:0,
+	    nav:false,
+	    items:1,
+	    autoHeight:550
+	});	
+
+	// script de los tabs
+	$(".prod-steps_list li").click(function(){
+		var alt = $(this).attr("alt");
+		$(this).parents(".producto-venta").find(".pro-ven_cobert").hide();
+		$(this).parents(".producto-venta").find(".pro-ven_cobert."+alt).fadeIn().css("display","flex");
+		$(this).parent().find("li").removeClass("active");
+		$(this).addClass("active");
+	});
+	$(".prod-steps_list li.active").click();
+	
+	// codigo de seguridad
+
+	function handleCharacter(event) {
+	    var $input = $(this),
+	        index = getIndex($input),
+	        digit = $input.val().slice(0,1),
+	        rest = $input.val().slice(1),
+	        $next;
+
+	    if (rest.length > 0) {
+	        $input.val(digit);  // trim input value to just one character
+	        $next = $('.def-txt-input[name="chars['+ (index + 1) +']"]');
+
+	        if ($next.length > 0) {
+	            $next.val(rest);  // push the rest of the value into the next input
+	            $next.focus();
+	            handleCharacter.call($next, event);  // run the same code on the next input
+	        }
+	    }
+	}
+
+	function handleBackspace(event) {
+	    var $input = $(this),
+	        index = getIndex($input),
+	        $prev;
+
+	    // if the user pressed backspace and the input is empty
+	    if (event.which === 8 && !$(this).val()) {
+	        $prev = $('.def-txt-input[name="chars['+ (index - 1) +']"]');
+	        $prev.focus();
+	    }
+	}
+
+	function getIndex($input) {
+	    return parseInt($input.attr('name').split(/[\[\]]/)[1], 10);
+	}
+
+	$('.def-txt-input')
+	    .on('keyup', handleCharacter)
+	    .on('keydown', handleBackspace);
+
+	// modal
+
+	$(".open-modal").click(function(){
+		$(".modal-ventas").fadeIn().css("display","flex")
+	});
+	$('[alt="close"]').click(function(){
+		$(".modal-ventas").fadeOut();
+	});	
+</script>

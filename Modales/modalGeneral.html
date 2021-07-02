@@ -1,0 +1,32 @@
+<style>
+#modal-general .mensaje {
+    margin: 0;
+}
+.modalText {
+    text-align: center;
+    margin: 0 0 20px;
+    font: 20px/1.3 var(--tipoRg);
+}
+</style>
+<!-- modal reenviar codigo-->
+<div class="oculto confirmacion" id="modal-general">
+	<div class="modals">
+		<div class="modal-bodys">
+			<div class="content denegado">
+				<span class="icon-cerrar salir"></span>
+				<h3 class="mensaje">
+					<span class="icon-alert bg-am"></span>
+				</h3>
+				<h3 id="modalMensaje" class="modalText"></h3>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+function showModal(msg,icon){
+	$("#modal-general #modalMensaje").text(msg);
+	$("#modal-general .mensaje").find("span").attr("class",icon);
+	$("#modal-general").fadeIn();
+}	
+</script>

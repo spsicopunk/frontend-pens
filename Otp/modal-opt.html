@@ -1,0 +1,223 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- bootstrap select -->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+<style>
+  /*modal otp*/
+  
+.form-group .active-view{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 19px;
+    color: var(--colorRojos);
+}
+.modales .content{
+    padding: 20px; 
+}
+#modalCodigo.modales .content {
+    text-align: center;
+    max-width: 380px;
+    padding: 30px 10px;
+}
+#modalCodigo.modales .content .title{
+    margin: 0 0 20px;
+}
+.modales .btn-verify{
+    display: table;
+    margin: 30px auto 20px;
+    border: none;
+    background: no-repeat;
+    color: var(--colorRojos);
+    font-size: 17px;
+    text-transform: uppercase;
+    font-family: var(--tipoBold);
+}
+#formModal{
+    margin: 20px 0;
+}
+#formModal .codeBox {
+     margin: 5px 1px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 40px;
+    border: solid 1px #ccc;
+    box-shadow: 0 0 5px #ccc inset;
+    outline: none;
+    width: calc((100% / 6) - 10px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border-radius: 3px;
+    background: #ccc;
+    color: var(--colorTextos);
+}
+#formModal .codeBox:focus {
+  border-color: #a7a7a7;
+  box-shadow: 0 0 5px #a7a7a7 inset;
+  color: #fff;
+}
+#formModal .codeBox:focus::placeholder{
+    color: #fff;
+}
+#formModal .codeBox::-moz-selection {
+  background: transparent;
+}
+#formModal .codeBox::selection {
+  background: transparent;
+}    
+
+#formModal .codeBox:focus, .otp-filled, .msg-error {
+    outline: 0;
+    border-color: #CE0024;
+    transition: all .3s ease;
+}
+
+#formModal .codeBox.otp-filled-active {
+    outline: 0;
+    border-color: #0eba00;
+}
+
+</style>
+
+<div class="modales" id="modalCodigo">
+    <div class="modals" >
+        <div class="modal-bodys">
+            <div class="content">
+                <span class="icon-cerrar salir"></span>
+                <h2 class="title">Código de verificación</h2>
+                <p class="txtdescribe">Hemos enviado un código de seguridad a tu celular/email para confirmar tu identidad.</p>
+                <div id="formModal">
+                    <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" class="codeBox" placeholder="-" />
+                    <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" class="codeBox" placeholder="-" />
+                    <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" class="codeBox" placeholder="-" />
+                    <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" class="codeBox" placeholder="-" />
+                    <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" class="codeBox" placeholder="-" />
+                    <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" class="codeBox" placeholder="-" />
+                    <button class="btn-verify">Continuar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a class="activador">activador</a>
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<!-- bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+$(".activador").click(function(){
+    $('#modalCodigo').fadeIn();    
+});
+
+$('.btn-verify, .salir').click(function(){
+    $(this).parents('.modales').fadeOut();
+});
+
+ // function code numbers - modal
+$(document).ready(function() {
+
+    $(".codeBox").keydown(function(ev) {
+        
+        otp_val = $(this).val();
+
+        if (ev.keyCode == 37) {
+            $(this).prev('.codeBox').focus();
+            ev.preventDefault();
+        } else if (ev.keyCode == 39) {
+            $(this).next('.codeBox').focus();
+            ev.preventDefault();
+        } else if (otp_val.length == 1 && ev.keyCode != 8 && ev.keyCode != 46) {
+            otp_next_number = $(this).next('.codeBox');
+            if (otp_next_number.length == 1 && otp_next_number.val().length == 0) {
+                otp_next_number.focus();
+            }
+        } else if (otp_val.length == 0 && ev.keyCode == 8) {
+            $(this).prev('.codeBox').val("");
+            $(this).prev('.codeBox').focus();
+        } else if (otp_val.length == 1 && ev.keyCode == 8) {
+            $(this).val("");
+        } else if (otp_val.length == 0 && ev.keyCode == 46) {
+            next_input = $(this).next('.codeBox');
+            next_input.val("");
+            while (next_input.next('.codeBox').length > 0) {
+                next_input.val(next_input.next('.codeBox').val());
+                next_input = next_input.next('.codeBox');
+                if (next_input.next('.codeBox').length == 0) {
+                    next_input.val("");
+                    break;
+                }
+            }
+        }
+        $('#code-error').addClass('invisible');
+        $('#code-clear').addClass('none');
+    }).focus(function() {
+        $(this).select();
+    }).keyup(function(ev) {
+        otpCodeTemp = "";
+        $("input.codeBox").each(function(i) {
+            if ($(this).val().length != 0) {
+                $(this).addClass('otp-filled-active');
+            } else {
+                $(this).removeClass('otp-filled-active');
+            }
+            otpCodeTemp += $(this).val();
+        });
+
+        if ($(this).val().length == 1 && ev.keyCode != 37 && ev.keyCode != 39) {
+            $(this).next('.codeBox').focus();
+            ev.preventDefault();
+        }
+    });
+
+    $(".codeBox").on("click", function(e) {
+        otp_val = $('#codeBox-1').val();
+        if (otp_val === "") {
+            $("#codeBox-1").focus();
+        }
+    });
+
+    $(".codeBox").on("paste", function(e) {
+        window.handlePasteOTP(e);
+    });
+});
+
+
+function handlePasteOTP(e) {
+    var clipboardData = e.clipboardData || window.clipboardData || e.originalEvent.clipboardData;
+    var pastedData = clipboardData.getData('Text');
+    var arrayOfText = pastedData.toString().split('');
+    for (var i = 0; i < arrayOfText.length; i++) {
+        if (i >= 0 && i <= 5) {
+            document.getElementById('codeBox-' + (i + 1)).value = arrayOfText[i];
+            if (i <= 2) {
+                document.getElementById('codeBox-' + (i + 2)).focus();
+            }
+        } else {
+            return;
+        }
+    }
+    e.preventDefault();
+}
+
+// expression regular number
+
+function onlyNumberInput(){
+    var key = event.which || event.keyCode;
+    if (key && (key <= 47 || key >= 58) && key != 8) {
+        event.preventDefault();
+    }
+}
+
+$(function(){
+    $(".codeBox").keypress( onlyNumberInput );
+});
+</script>

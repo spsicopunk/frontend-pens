@@ -1,0 +1,50 @@
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+<style>
+
+.spacer {
+  height: 200vh;
+}
+
+.button__scroll--up {
+  z-index: 1000;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  border-radius: 100%;
+  border: 0;
+  width: 55px;
+  height: 55px;
+  font-size: 1.7em;
+  outline: none;
+  color: #5A6D65;
+  transform: scale(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.is_showing {
+  display: block;
+  transform: scale(1);
+}	
+</style>
+
+<button class="button__scroll--up"><span class="fa fa-chevron-up"></span></button>
+
+<div class="spacer"></div>
+
+
+<script>
+$(window).scroll(function() {
+  var wScroll = $(this).scrollTop(), scrollAmount = 150;
+
+  if (wScroll > scrollAmount) {
+    $(".button__scroll--up").addClass("is_showing");
+  } else {
+    $(".button__scroll--up").removeClass("is_showing");
+  }
+});
+$('.button__scroll--up').click( function(){
+  $('html , body').animate({scrollTop: 0},1000);
+})	
+</script>

@@ -1,0 +1,342 @@
+<style>
+:root{
+    --tipoBold: "kuromedium";
+    --tipoRg: "kuromedium";
+    --colorTextos: #001f49;
+    --colorResalta:#008acc;
+    --colorGrisMedio: #B6BFCD;
+    --altoBox: 125px;
+}   
+.benifit-insurance {
+    max-width: 942px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+}
+.tabs-component {
+    margin-top: 30px;
+    margin-bottom: 0px;
+    border: 1px solid var(--colorGrisMedio);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    border-top-right-radius: 8px;
+    padding: 0px; 
+    background: #fff;
+}
+.tabs-component li {
+    width: 100%;
+    border-right: 1px solid var(--colorGrisMedio);
+    border-top-right-radius: 8px;
+    cursor: pointer;
+}
+.tabs-component li:last-child {
+    border: none;
+}
+.tabs-component li.active {
+    background: var(--colorResalta);
+    border: none;
+}
+.tabs-component li a {
+    width: 100%;
+    text-align: center;
+    display: table;
+    padding: 8px 0px;
+    text-decoration: none;
+    font: bold 1.25em/1.3 var(--tipoBold);
+    color: var(--colorGrisMedio);
+}
+.tabs-component li.active a{
+    color: #fff;
+}
+.th-head_benifit {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    background: var(--colorTextos);
+    margin: 0px; 
+}
+.th-head_benifit li {
+    color: #fff;
+    padding: 10px 0px;
+    font: bold 1.25em/1.3 var(--tipoBold);
+}
+.benifit-item {
+    display: none;
+    background: #fff;
+}
+.th-head_benifit + .benifit-item {
+    display: flex;
+}
+.benifit-item > div {
+    width: 100%;
+    border-left: 1px dashed var(--colorGrisMedio);
+}
+.benifit-item > div:first-child, .coverage-item:first-child{
+    border: none;
+}
+.coverage-item {
+    min-height: var(--altoBox);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px dashed var(--colorGrisMedio);
+    padding: 0 10px;
+}
+.coverage-item.box-item2{
+    height: calc(125px * 2);
+}
+.coverage-item.box-item3{
+    height: calc(125px * 3);
+}
+.coverage-item_icon {
+    width: 30px;
+    height: 30px;
+}
+.coverage-item_title {
+    font: 0.75em/1.3 var(--tipoRg);
+    color: var(--colorTextos);
+    margin: 10px 0 0px;
+    text-align: center;
+    display: table;
+}
+.coverage-item_cubre {
+    color: var(--colorTextos);
+    padding: 10px 0px;
+    font: bold 1em/1.3 var(--tipoBold);
+    margin: 0;
+}
+.textocan {
+    font: bold 1.875em/1.3 var(--tipoBold);
+    color: var(--colorResalta);
+    margin-bottom: 30px;
+    font-family: var(--tipoBold);
+    text-align: center;
+}
+.grayItem{
+    background: #EEEEEE;
+}
+@media only screen and (min-width: 768px){
+    .tabs-component{
+        max-width: 640px;
+    }
+    .coverage-item{
+        flex-direction: row;
+    }
+    .service .coverage-item {
+        justify-content: flex-start;
+    }   
+    .coverage-item_title{
+        text-align: left;
+    }
+    .coverage-item_icon {
+        width: 50px;
+        height: 40px;
+        margin-right: 20px;
+    }   
+    .coverage-item_title {
+        font: 1em/1.3 var(--tipoRg);
+    }
+    .coverage-item_cubre{
+        font: bold 1.50em/1.3 var(--tipoBold);
+    }
+    .textocan {
+        font: bold 1.875em/1.3 var(--tipoBold);
+    }       
+}
+</style>
+<section class="benifit-insurance">
+    <div class="textocan">Beneficios adicionales de tu seguro</div>
+
+    <ul class="tabs-component">
+        <li class="active"><a alt="#tab1">Hogar</a></li>
+        <li><a alt="#tab2">Médica</a></li>
+        <li><a alt="#tab3">Mascotas</a></li>
+    </ul>
+
+    <div class="table-benifit">
+        <ul class="th-head_benifit">
+            <li>Servicio</li>
+            <li>Cobertura</li>
+            <li>Eventos</li>
+        </ul>
+        <div class="benifit-item home_benifit" id="tab1">
+            <div class="service">
+                <div class="coverage-item">
+                    <img src="/documents/3245817/5743611/drinking.svg" class="coverage-item_icon">
+                    <p class="coverage-item_title">Envío de pago de plomeros por emergencia</p>
+                </div>
+                <div class="coverage-item">
+                    <img src="/documents/3245817/5743611/atm.svg" class="coverage-item_icon">
+                    <p class="coverage-item_title">Envío de pago de cerrajeros por emergencia</p>
+                </div>
+                <div class="coverage-item">
+                    <img src="/documents/3245817/5743611/window.svg" class="coverage-item_icon">
+                    <p class="coverage-item_title">Envío de pago de vidrieros por emergencia</p>
+                </div>  
+                <div class="coverage-item grayItem">
+                    <img src="/documents/3245817/5743611/siren.svg" class="coverage-item_icon">
+                    <p class="coverage-item_title">Servicios de conexión para trabajos por emergencia</p>
+                </div>  
+                <div class="coverage-item">
+                    <img src="/documents/3245817/5743611/carpenter.svg" class="coverage-item_icon">
+                    <p class="coverage-item_title">Armado de muebles</p>
+                </div>                                                              
+            </div>
+            <div class="coverage">
+                <div class="coverage-item box-item3">
+                    <p class="coverage-item_cubre">$230.000</p>
+                </div>
+                <div class="coverage-item grayItem">
+                    <p class="coverage-item_cubre">ILIMITADO</p>
+                </div>      
+                <div class="coverage-item">
+                    <p class="coverage-item_cubre">115.000</p>
+                </div>                                                  
+            </div>
+            <div class="event">
+                <div class="coverage-item box-item2"> 
+                    <p class="coverage-item_cubre">4</p>
+                </div>
+                <div class="coverage-item">
+                    <p class="coverage-item_cubre">1</p>
+                </div>      
+                <div class="coverage-item grayItem">
+                    <p class="coverage-item_cubre">ILIMITADO</p>
+                </div>  
+                <div class="coverage-item">
+                    <p class="coverage-item_cubre">2</p>
+                </div>                                  
+            </div>
+        </div>
+        <div class="benifit-item medica_benifit" id="tab2">
+            <div class="service">
+                <div class="coverage-item grayItem">
+                    <img src="/documents/3245817/5743702/call-hospital.svg" class="coverage-item_icon">
+                    <p class="coverage-item_title">Consulta médica o pedíatrica telefónica</p>
+                </div>
+                <div class="coverage-item">
+                    <img src="/documents/3245817/5743702/taxi.svg" class="coverage-item_icon">
+                    <p class="coverage-item_title">Taxi a clínica en caso de accidente</p>
+                </div>
+                <div class="coverage-item grayItem">
+                    <img src="/documents/3245817/5743702/mindfulness.svg" class="coverage-item_icon">
+                    <p class="coverage-item_title">Orientación telefónica psicológica</p>
+                </div>  
+                <div class="coverage-item">
+                    <img src="/documents/3245817/5743702/hospital.svg" class="coverage-item_icon">
+                    <p class="coverage-item_title">Referenciación clínicas hospitales a nivel nacional</p>
+                </div>  
+                <div class="coverage-item grayItem">
+                    <img src="/documents/3245817/5743702/support.svg" class="coverage-item_icon">
+                    <p class="coverage-item_title">Orientación telefónica</p>
+                </div>                                                              
+            </div>
+            <div class="coverage">
+                <div class="coverage-item grayItem">
+                    <p class="coverage-item_cubre">ILIMITADO</p>
+                </div>
+                <div class="coverage-item">
+                    <p class="coverage-item_cubre">$30.000</p>
+                </div>      
+                <div class="coverage-item grayItem">
+                    <p class="coverage-item_cubre">ILIMITADO</p>
+                </div>  
+                <div class="coverage-item">
+                    <p class="coverage-item_cubre">ILIMITADO</p>
+                </div>      
+                <div class="coverage-item grayItem">
+                    <p class="coverage-item_cubre">ILIMITADO</p>
+                </div>                                                                  
+            </div>
+            <div class="event">
+                <div class="coverage-item grayItem">
+                    <p class="coverage-item_cubre">3</p>
+                </div>
+                <div class="coverage-item">
+                    <p class="coverage-item_cubre">1</p>
+                </div>      
+                <div class="coverage-item grayItem">
+                    <p class="coverage-item_cubre">4</p>
+                </div>  
+                <div class="coverage-item">
+                    <p class="coverage-item_cubre">ILIMITADO </p>
+                </div>  
+                <div class="coverage-item grayItem">
+                    <p class="coverage-item_cubre">2</p>
+                </div>                                                  
+            </div>
+        </div>      
+        <div class="benifit-item pets_benifit" id="tab3">
+            <div class="service">
+                <div class="coverage-item grayItem">
+                    <img src="/documents/3245817/5743708/wound.svg" class="coverage-item_icon">
+                    <p class="coverage-item_title">Consulta médica veterinaria por accidente o enfermedad</p>
+                </div>
+                <div class="coverage-item">
+                    <img src="/documents/3245817/5743708/veterinarian.svg" class="coverage-item_icon">
+                    <p class="coverage-item_title">Orientación médica veterinaria telefónica</p>
+                </div>
+                <div class="coverage-item grayItem">
+                    <img src="/documents/3245817/5743708/medicine.svg" class="coverage-item_icon">
+                    <p class="coverage-item_title">Envío medicamentos a docmicilio por accidente o enfermedad</p>
+                </div>  
+                <div class="coverage-item">
+                    <img src="/documents/3245817/5743708/rip.svg" class="coverage-item_icon">
+                    <p class="coverage-item_title">Referencia y coordinación con cementerios de mascotas</p>
+                </div>  
+                <div class="coverage-item grayItem">
+                    <img src="/documents/3245817/5743708/dog.svg" class="coverage-item_icon">
+                    <p class="coverage-item_title">Referencia y coordinación de caminatas eco-recreativas caninas </p>
+                </div>                                                              
+            </div>
+            <div class="coverage">
+                <div class="coverage-item grayItem">
+                    <p class="coverage-item_cubre">$60.000</p>
+                </div>
+                <div class="coverage-item">
+                    <p class="coverage-item_cubre">ILIMITADO</p>
+                </div>      
+                <div class="coverage-item grayItem">
+                    <p class="coverage-item_cubre">$46.000</p>
+                </div>              
+                <div class="coverage-item">
+                    <p class="coverage-item_cubre">ILIMITADO</p>
+                </div>  
+                <div class="coverage-item grayItem">
+                    <p class="coverage-item_cubre">ILIMITADO</p>
+                </div>                                                                  
+            </div>
+            <div class="event">
+                <div class="coverage-item grayItem">
+                    <p class="coverage-item_cubre">2</p>
+                </div>
+                <div class="coverage-item">
+                    <p class="coverage-item_cubre">2</p>
+                </div>      
+                <div class="coverage-item grayItem">
+                    <p class="coverage-item_cubre">1</p>
+                </div>  
+                <div class="coverage-item">
+                    <p class="coverage-item_cubre">ILIMITADO</p>
+                </div>          
+                <div class="coverage-item grayItem">
+                    <p class="coverage-item_cubre">ILIMITADO</p>
+                </div>                                                  
+            </div>
+        </div>          
+    </div>
+</section>
+
+<script>
+    $(".tabs-component li a").click(function(){
+        var alt = $(this).attr("alt");
+        $(".benifit-item").hide();
+        $(alt).fadeIn().css("display","flex");
+        $(".tabs-component li").removeClass("active");
+        $(this).parent().addClass("active");
+    });
+</script>

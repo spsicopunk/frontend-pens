@@ -1,0 +1,1345 @@
+:root{
+	--redPrim: #ED1C29;
+	--blueSec: #AEA9F4;
+	--blueLight: #3D78DD;
+  --purplePrim: #7849B8;
+  --grayDark: #333333;
+	--grayStripe: #ccc;
+	--fontRegular: 'Open Sans';
+	--fontBold: 'Open Sans'; 
+}	
+
+/*icons*/
+
+@font-face {
+  font-family: 'ventas-scotia';
+  src:  url('fonts/ventas-scotia.eot?g0zpcx');
+  src:  url('fonts/ventas-scotia.eot?g0zpcx#iefix') format('embedded-opentype'),
+    url('fonts/ventas-scotia.ttf?g0zpcx') format('truetype'),
+    url('fonts/ventas-scotia.woff?g0zpcx') format('woff'),
+    url('fonts/ventas-scotia.svg?g0zpcx#ventas-scotia') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icons-"], [class*=" icons-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ventas-scotia' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icons-alto-riesgo:before {
+  content: "\e900";
+}
+.icons-cardiovascular:before {
+  content: "\e901";
+}
+.icons-cerebro:before {
+  content: "\e902";
+}
+.icons-clasico:before {
+  content: "\e903";
+}
+.icons-degenerativas:before {
+  content: "\e904";
+}
+.icons-gastrointestinal:before {
+  content: "\e905";
+}
+.icons-geneticas:before {
+  content: "\e906";
+}
+.icons-hematologicas:before {
+  content: "\e907";
+}
+.icons-import:before {
+  content: "\e908";
+}
+.icons-infecciosa:before {
+  content: "\e909";
+}
+.icons-lesion:before {
+  content: "\e90a";
+}
+.icons-mentales:before {
+  content: "\e90b";
+}
+.icons-metabolicas:before {
+  content: "\e90c";
+}
+.icons-oncologicas:before {
+  content: "\e90d";
+}
+.icons-preferente:before {
+  content: "\e90e";
+}
+.icons-premium:before {
+  content: "\e90f";
+}
+.icons-renales:before {
+  content: "\e910";
+}
+.icons-respiratorias:before {
+  content: "\e911";
+}
+.icons-swm:before {
+  content: "\e912";
+}
+
+
+/*general styles*/
+.fontTitle{
+	font: 30px/1.3 var(--fontRegular);
+}
+.fontSubTitle{
+	font: 20px/1.3 var(--fontRegular);
+}
+.fontDestacado{
+	font: 18px/1.3 var(--fontRegular); 
+}	
+.fontTag{
+	font: 16px/1.3 var(--fontRegular); 
+}	
+.fontText{
+	font: 14px/1.3 var(--fontRegular);
+	color: var(--grayDark);
+}
+.fontMin{
+	font: 12px/1.3 var(--fontRegular); 
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/*diseño de botones*/
+
+.btn-prim {
+    background: var(--redPrim);
+    color: #fff;
+    font: bold 12px/1.3 var(--fontRegular);
+    border-radius: 8px;
+    padding: 18px;
+    margin: 0 auto 10px;
+    display: table;
+    transition: all .3s;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn-prim.second{
+    background: var(--purplePrim);
+    text-decoration: none;
+}
+.btn-prim.terciario{
+    background: var(--redPrim);
+    text-decoration: none;
+}
+.btn-prim.terciario:hover {
+    background: #fff;
+    text-decoration: none;
+}
+.btn-prim.line {
+    border: 1px solid var(--purplePrim) !important;
+    background: inherit;
+    color: var(--purplePrim);
+    text-decoration: none;
+}
+.btn-prim.line:hover {
+    background: var(--purplePrim);
+    opacity: 1;
+    color: #fff;
+    text-decoration: none;
+}
+.btn-prim:hover{
+    border: 1px solid var(--purplePrim) !important;
+    background: inherit;
+    color: var(--purplePrim);
+    text-decoration: none;
+}
+
+
+/*diseño de los checkbox*/
+
+/* Checkmark style starts */
+
+@-moz-keyframes dothabottomcheck {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 7px;
+    }
+}
+
+@-webkit-keyframes dothabottomcheck {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 7px;
+    }
+}
+
+@keyframes dothabottomcheck {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 7px;
+    }
+}
+
+@keyframes dothatopcheck {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 0;
+    }
+    100% {
+        height: 12px;
+    }
+}
+
+@-webkit-keyframes dothatopcheck {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 0;
+    }
+    100% {
+        height: 12px;
+    }
+}
+
+@-moz-keyframes dothatopcheck {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 0;
+    }
+    100% {
+        height: 12px;
+    }
+}
+
+input.check[type=checkbox] {
+    display: none;
+}
+
+.check-box_gen {
+    height: 20px;
+    width: 20px;
+    min-width: 20px;
+    background-color: transparent;
+    border: 2px solid var(--purplePrim);
+    border-radius: 4px;
+    position: relative;
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-transition: border-color ease 0.2s;
+    -o-transition: border-color ease 0.2s;
+    -webkit-transition: border-color ease 0.2s;
+    transition: border-color ease 0.2s;
+    cursor: pointer;
+    margin-right: 10px !important;
+}
+
+.check-box_gen::before,
+.check-box_gen::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    height: 0;
+    width: 3px;
+    background-color: var(--purplePrim);
+    display: inline-block;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -o-transform-origin: left top;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    border-radius: 5px;
+    content: ' ';
+    -webkit-transition: opacity ease .5;
+    -moz-transition: opacity ease .5;
+    transition: opacity ease .5;
+}
+
+.check-box_gen::before {
+    top: 13px;
+    left: 8px;
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.check-box_gen::after {
+    top: 9px;
+    left: 2px;
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+
+input[type=checkbox]:checked + .check-box_gen::after,
+.check-box_gen.checked::after {
+    height: 50px;
+    -moz-animation: dothabottomcheck 0.2s ease 0s forwards;
+    -o-animation: dothabottomcheck 0.2s ease 0s forwards;
+    -webkit-animation: dothabottomcheck 0.2s ease 0s forwards;
+    animation: dothabottomcheck 0.2s ease 0s forwards;
+}
+
+input[type=checkbox]:checked + .check-box_gen::before,
+.check-box_gen.checked::before {
+    height: 120px;
+    -moz-animation: dothatopcheck 0.4s ease 0s forwards;
+    -o-animation: dothatopcheck 0.4s ease 0s forwards;
+    -webkit-animation: dothatopcheck 0.4s ease 0s forwards;
+    animation: dothatopcheck 0.4s ease 0s forwards;
+}
+
+
+.fade_out{
+   display: none;
+}
+
+/*Banner*/  
+
+.banner-ventas {
+    pointer-events: none;
+}
+
+.ban-v_item{
+    display: flex;
+    align-items: center;
+    background: var(--blueSec);
+    flex-direction: column;
+}
+
+.ban-v_content {
+    padding: 20px 15px;
+    background: var(--purplePrim);
+    pointer-events: all;
+}
+.ban-v_title{ 
+	margin: 0px;
+	text-align: center;
+	color: #FFFFFF;
+}
+.ban-v_txt{
+	margin: 10px 0px  0px;	
+	text-align: center;
+    color: #fff;
+}
+.ban-v_btn {
+    margin: 30px auto;
+}
+.ban-v_img {
+    height: 400px;
+    object-fit: contain;
+}
+
+/*banner franja*/	
+
+.banner-title {
+    background: var(--purplePrim);
+}
+.bnn_container{
+    padding: 18px 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+.bnn_container *{
+	color: #fff;
+  margin: 0;
+}
+
+
+/*estilos steps*/
+.steps-progress {
+    margin-top: 40px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 40px auto 0;
+}
+.step-nav {
+	  height: 36px;
+    position: relative;
+    margin: 0 auto 70px;
+    transform: scale(.9);
+    left: -2%;
+    max-width: 480px;
+    width: 100%;
+    pointer-events: none;
+}
+.step-nav .step {
+    position: relative;
+    float: left;
+    width: calc(100% / 5);
+    height: 36px;
+}
+.step-nav .step p {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  line-height: 80px;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 10;
+  color: #fff;
+  transition: font-size 0.3s, color 0.3s;
+  top: -22px;
+  font-weight: bold;
+}
+.step-nav .step p.active {
+  font-size: 18px;
+  color: #fafafa;
+}
+.radial-progress.bg + p {
+    color: #fff !important;
+}
+.radial-progress.bg + p span {
+    top: 32px;
+}
+.step-nav .step .line {
+  position: absolute;
+  top: 50%;
+  margin-top: -3px;
+	width: 62px;
+	height: 3px;
+	background: #d6dadc;
+}
+.step-nav .step .line .progress {
+  width: 0%;
+  height: 3px;
+  background: var(--purplePrim);
+}
+.step-nav .step .radial-progress.bg .inset .inner-circle {
+    background: var(--purplePrim);
+}
+.step-nav .step .radial-progress {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  right: 0;
+  border-radius: 50%;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  cursor: pointer;
+}
+.step-nav .step .radial-progress .circle .mask,
+.step-nav .step .radial-progress .circle .fill,
+.step-nav .step .radial-progress .circle .shadow {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  border-radius: 50%;
+}
+.step-nav .step .radial-progress .circle .mask,
+.step-nav .step .radial-progress .circle .fill {
+  -webkit-backface-visibility: hidden;
+}
+.step-nav .step .radial-progress .circle .mask {
+  clip: rect(0px, 80px, 80px, 40px);
+}
+.step-nav .step .radial-progress .circle .mask .fill {
+  clip: rect(0px, 40px, 80px, 0px);
+  background-color: var(--purplePrim);
+}
+.step-nav .step .radial-progress .inset {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  background-color: var(--purplePrim);
+  border-radius: 50%;
+}
+.step-nav .step .radial-progress .inset .inner-circle {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    background: #ccc;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+}
+.step-nav .step.first .radial-progress {
+  transform: matrix(0, 1.3, -1.3, 0, 0, 0);
+  z-index: 10;
+}
+.step-nav .step.first .circle .fill,
+.step-nav .step.first .circle .mask.full {
+  transform: rotate(180deg);
+}
+.step-nav .step.first .circle .fill.fix {
+  transform: rotate(360deg);
+}
+.step-nav .step.first .radial-progress.active .inner-circle {
+  transform: matrix(0, 0, 0, 0, 0, 0);
+}
+.step-nav .step > span {
+    display: table;
+    margin: 50px auto 0px;
+    text-align: center;
+    left: 28%;
+    position: relative;
+    font-size: 12px;
+    width: 50px;
+    color: #999999;
+}
+.radial-progress.active ~ span, .radial-progress.bg ~ span {
+    color: var(--purplePrim);
+}
+.copy-holder {
+  position: relative;
+  width: 470px;
+  height: 100px;
+  margin: 0 auto;
+  font-size: 20px;
+  text-align: center;
+  border: 3px dashed var(--purplePrim);
+  padding-top: 45px;
+  color: #666666;
+}
+.copy-holder div {
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+.copy-holder div h4 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.copy-holder div p {
+  display: block;
+}
+.copy-holder div.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* formulario de identidad */
+
+.formularios{
+  	max-width: 100%;
+  	margin: 0 auto;
+  	flex-direction: column;	
+}
+.formularios.spa_lateral {
+    padding: 0 20px;
+}
+.formularios .imgcelu{
+    max-width: 150px;
+    display: table;
+    object-fit: contain;
+    padding: 0 15px;
+}
+.formularios .tituloform{
+  	color: var(--grayDark);
+  	margin: 0;
+  	text-align: left;
+  	position: relative;
+  	font-weight: bold;
+}
+.formularios .tituloform.imgCont, .formularios .tituloform.imgIcon {
+    display: flex;
+    align-items: center;
+    margin: 0 auto 20px;
+    justify-content: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.tituloform.fontTag.imgCont [class^="icon-"] {
+    font-size: 45px;
+    margin-right: 10px;
+}
+.formularios .tituloform.imgCont .imgcelu{
+    max-width: 120px;
+}
+.formularios#formdatos1{
+	display: flex;
+}
+.formularios .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+	width: 100%;
+}
+.formularios .verifica{
+	display: none;
+	text-align: center;
+}
+.formularios .label-general{
+	color: var(--purplePrim); 
+	display: block;
+	font-size: 15px;
+}
+.formularios .term-check .tyc{
+	color: #333;
+}
+.formularios .term-check{
+	display: flex;
+}
+.formularios .tiposDoc{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 23px 0 0;
+}
+.formularios .tipos{
+	cursor: pointer;
+}
+.formularios .input-primario, .formularios .select-primario button{
+	border: none;
+	border-bottom: 1px solid var(--purplePrim);
+	border-radius: 0;
+	width: 100%;
+}
+.formularios .input-primario:focus {
+    outline: none;
+    border-width: 2px;
+}
+.formularios .input-primario::-webkit-input-placeholder { 
+  color: #333;
+}
+
+.formularios .input-primario:-ms-input-placeholder { 
+  color: #333;
+}
+
+.formularios .input-primario::placeholder {
+  color: #333;
+}
+.formularios .boton-primario{
+	border: none;
+}
+.formularios .g-recaptcha,
+.formularios .btnsRegistro{
+	margin: 20px auto;
+	display: table;
+}
+.formularios .fieldset .form-group{
+	margin: 30px auto; 
+}
+.formularios .fieldset .tipos .iconoTipo{
+	font-size: 45px;
+	margin: 0 auto;
+	display: table;
+	border-radius: 100%;
+	background: #E5E5E5;
+	padding: 13px;
+}
+.formularios .fieldset .tipos.iconoactivo .iconoTipo{
+	background: var(--purplePrim);
+	color: #fff;
+}
+.formularios .fieldset .tipos.iconoactivo .nombresTipo{
+	font-family: var(--fontBold);
+}
+.formularios .fieldset .tipos .nombresTipo{
+	font-size: 13px;
+	margin: 6px 0;
+}
+.form-container{
+  padding: 0 15px; 
+  margin-bottom: 40px;
+}
+.form_box {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.form-title_box {
+    padding-left: 20px;
+}
+.form_addons {
+    background: var(--purplePrim);
+    padding: 5px 10px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: -32px;
+    top: -2px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    transform: scale(.7);
+}
+.formularios .btn-prim {
+    margin-top: 40px;
+}  
+.formularios .form-title_text{
+    margin-top: 10px;
+}
+.formularios.box-top {
+    align-items: flex-start;
+}
+/*segmento*/
+
+.form-items_box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    max-width: 350px;
+    margin: 0 auto 40px;
+}
+.form-items_box.age .box_item {
+    width: calc(100% / 3);
+    margin: 30px 0px 0px;
+}
+.box_item {
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+.box_item > span {
+    background: #F6F6F6;
+    padding: 10px;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 35px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+.age .box_item > span{
+    font-size: 16px;
+    font-weight: bold;
+}
+.box_item-text {
+    margin: 10px 0 0 0;
+    text-align: center;
+}
+.form-items_btns {
+    display: flex;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto 40px;
+}
+.box_item.active > span {
+    background: var(--purplePrim);
+    color: #fff;
+}
+
+/*arma plan*/
+
+.box-warning {
+    max-width: 90%;
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: #F6F6F6;
+    border-radius: 12px;
+}
+
+.box-warning > span {
+    font-size: 20px;
+    margin: 0 15px 0 10px;
+    color: #FB6630;
+}
+
+.box-warning > p {
+    margin: 0;
+}
+.formularios .resume-safe {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+.resume-safe {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+    display: table;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+.resume-safe_title {
+    margin: 24px auto;
+    display: table;
+    font-weight: bold !important;
+    color: var(--purplePrim);
+    padding: 0 20px;
+    text-align: center;
+}
+.resume-safe_stripe {
+    background: #F6F6F6;
+    padding: 10px 12% 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.resume-safe_sub, .resume-safe_price, .safe-box_title {
+    margin: 0px;
+    font-weight: bold !important;
+}
+.resume-safe_sub span {
+    display: table;
+}
+.val-adicional {
+    right: 0;
+    color: var(--purplePrim);
+    font-weight: bold !important;
+    margin: 0 10px;
+}
+.safe-box {
+    max-width: 420px;
+    margin: 30px auto;
+    width: 100%;
+    padding: 0 20px;
+}
+.safe-box_title {
+    margin-bottom: 20px;
+    color: var(--purplePrim);
+}
+.list-safe_box {
+    margin: 0 auto;
+    display: block;
+    list-style-type: none;
+    padding: 0;
+}
+.list-safe_box li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.list-safe_box li:before {
+    content: "";
+    display: table;
+    width: 6px;
+    height: 6px;
+    background: var(--purplePrim);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.safe-box_cont {
+    margin: 30px 0 20px 0;
+    display: table;
+    width: 100%;
+}
+.safe-box_btns {
+    display: flex;
+}
+.safe-box_coverage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+    position: relative;
+}
+.safe-box_coverage:before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    bottom: 8px;
+    height: 1px;
+    background: #ccc;
+}
+.safe-item_cob{
+    display: flex;
+    align-items: center;  
+}
+.safe-item_cob, .value_safe {
+    background: #fff;
+    position: relative;
+}
+.cob_safe {
+    font-size: 26px;
+}
+
+/*declaracion de salud*/ 
+
+.enfermedad_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;
+}
+.enfermedad_box_item {
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    max-width: 220px;
+    width: 100%;
+    cursor: pointer;
+    min-height: 170px;
+    opacity: .6;
+    margin: 0 10px;
+}
+.enfermedad_box_item.actives{
+    opacity: 1;
+}
+.enfermedad_box_item.line{
+    border: 1px solid var(--purplePrim);
+}
+.enfermedad_item-text {
+    text-align: center;
+    color: var(--grayDark);
+    margin: 0;
+    font-weight: bold !important;
+}
+.enfermedad_box_item span {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: var(--purplePrim);
+}
+.enfermedad_box_item .enfer_cob {
+    color: var(--purplePrim);
+    font-size: 50px;
+}
+
+.enfermedad_result{
+    display: none;
+}
+.enfermedad_box_text {
+    font-size: 18px !important;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.enfer-result_box {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 15px;
+}
+.enfer-result_box {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.arma_center {
+    margin: 0 auto;
+    display: table;
+}
+.safe-box_prod {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.safe-box_prod .btn-prim {
+    margin: 40px 10px;
+}
+.enfer-result_item > span {
+    margin: 0 auto 20px;
+    font-size: 50px;
+    background: #F6F6F6;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.enfer-result_item {
+    width: calc(50% - 10px);
+    margin: 20px 5px;
+    cursor: pointer;
+}
+.enfer-result_item.actives > span {
+    background: var(--purplePrim);
+    color: #fff;
+}
+.enfer-text {
+  color: var(--grayDark);
+  display: table;
+  margin: 0 auto 10px;
+  text-align: center;
+}
+.enfer-terminos {
+    margin-top: 30px;
+}
+.enfer-titles {
+    display: table;
+    font-weight: bold;
+    margin: 0 auto;
+}
+.enfer_terms {
+    font: 12px/1.3 var(--fontRegular);
+    margin: 0;
+}
+
+/*cita medica*/
+
+.diary_list {
+    margin: 20px auto 0px;
+    display: table;
+    list-style-type: none;
+    padding: 0;
+}
+
+.diary_list  li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.diary_list li:before {
+    content: "";
+    display: table;
+    width: 6px;
+    min-width: 6px;
+    height: 6px;
+    background: var(--purplePrim);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.medical_agenda-box {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    padding: 20px 40px;
+    margin-top: 20px;
+}
+
+.agenda-box_title {
+    font-weight: bold !important;
+    color: var(--purplePrim);
+    margin-bottom: 20px;
+}
+.agenda-box_detail {
+    margin: 0 0 20px;
+    font-weight: bold !important;
+    color: var(--purplePrim);
+}
+
+.agenda-box_adress {
+    margin-bottom: 20px;
+    color: var(--darkPrim);
+}
+
+.agenda-box_time {
+    font-weight: bold !important;
+    display: table;
+    margin-bottom: 30px;
+}
+
+.agenda-box_back {
+    font-weight: bold !important;
+    color: var(--purplePrim);
+    margin-bottom: 10px;
+    display: table;
+}
+.agenda-box_back:focus{
+   text-decoration: underline;
+   color: var(--purplePrim);
+}
+.agenda-box_prod {
+    justify-content: center;
+}
+
+.agenda-box_prod .btn-prim {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+/*modal*/
+
+.modal-ventas {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+}
+.modal-ventas:after {
+    content: "";
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--grayDark);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    opacity: .8;
+}
+.modal-v_body {
+    background: #fff;
+    z-index: 1;
+    padding: 20px 40px;
+    border-radius: 22px;
+    max-width: 430px;
+    width: 90%;
+}
+.modal-v_title {
+    color: var(--purplePrim);
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.btn-link {
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--purplePrim);
+}
+
+@media only screen and (min-width: 768px){
+
+	/*general styles*/
+
+  .btn-prim {
+      padding: 18px 36px;
+      font: bold 16px/1.3 var(--fontRegular);
+  }
+
+	.fontTitle{
+		font: 34px/1.3 var(--fontRegular);
+	}
+	.fontSubTitle{
+		font: 30px/1.3 var(--fontRegular);
+	}
+	.fontDestacado{
+		font: 24px/1.3 var(--fontRegular); 
+	}		
+	.fontTag{
+		font: 20px/1.3 var(--fontRegular); 
+	}		
+	.fontText{
+		font: 16px/1.3 var(--fontRegular);
+	} 	
+	.fontMin{
+		font: 14px/1.3 var(--fontRegular); 
+	}
+
+	/*banner*/
+
+	.ban-v_content {
+		max-width: 700px;
+		width: 100%;
+		padding: 40px 0 30px 6%;
+	}
+	.ban-v_title,.ban-v_txt{
+		text-align: left;
+		margin-bottom: 20px;
+	}
+	.ban-v_item{
+		flex-direction: row;
+	}
+	.ban-v_img{
+		height: inherit;
+		width: 40% !important;
+	}
+	.ban-v_btn {
+	    margin: 35px 0;
+	}	
+
+	/*steps*/
+	.step-nav{
+		transform: scale(1);
+	}
+	.step-nav .step > span{
+		left: 32%;
+	}
+
+	/* formulario de datos */
+
+	.formularios{
+		max-width: 100%;
+	}
+	.formularios .fieldset{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.formularios .formularios_box {
+    max-width: 500px;
+    margin: 50px 15px;
+    width: 100%;
+	}	
+	.formularios .fieldset.fieldimage{
+    padding: 0 30px; 
+	}
+	.formularios .tituloform,
+	.formularios .textos,
+	.formularios .verifica{
+		text-align: left;
+	}
+	.formularios .g-recaptcha, 
+	.formularios .btnsRegistro{
+		margin: 20px 0;
+	}
+	.formularios .imgcelu{
+		max-width: 470px;
+    width: 100%;
+		margin: 0 auto;
+	}
+	.formularios{
+		justify-content: space-between;
+		width: 100%;
+		max-width: 1200px;
+		padding-left: 30px;
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+	}	
+  .form-container{
+     max-width: 300px; 
+     width: 100%;     
+  }
+	.form_addons {
+		transform: scale(1);
+		top: -1px;
+		left: -40px;		
+	}
+	.form_box{
+		justify-content: left;
+	}
+  .formularios .tituloform.imgCont{
+    justify-content: flex-start;
+  }  
+  .formularios .tituloform.imgIcon {
+      padding: 0;
+      font-size: 19px;
+  }  
+  /*segmento*/
+  
+  .formularios .formularios_box.segment {
+      max-width: 570px;
+  }  
+  .box_item{
+    width: inherit;
+  }
+  .form-items_box{
+    max-width: inherit;
+  }
+  .form-items_btns {
+      margin: 0 0 40px;
+  }
+  /*arma plan*/
+  .box-warning{
+    max-width: 100%;
+  }
+  .enfermedad_box {
+      margin: 40px 0px;
+  }  
+}
+
+@media only screen and (min-width: 992px){
+	/*banner*/
+
+	.ban-v_img{
+		width: inherit !important;
+		padding-right: 5%;
+	}
+	.ban-v_item{
+		justify-content: space-between;
+	}
+  /*steps*/
+  .step-nav.open{
+      margin: 0 0 40px 0px;
+  }   
+  /*formularios*/
+  .formularios.box-top .resume-safe {
+      margin-top: -150px;
+  }    
+  .form-title_box{
+    padding: 0px;
+  }  
+  /*segmento*/
+  .form-items_box.age .box_item{
+    width: inherit;
+  }  
+  .form-items_box{
+    justify-content: space-between;
+  }
+  /*Arma plan*/
+  .arma_center, .enfermedad_box_item{
+    margin: 0px;
+  }
+  .val-adicional {
+      position: absolute;  
+  }    
+  .formularios .resume-safe{
+      float: right;
+      margin: 0
+  }
+  /*declaracion personal*/
+  .enfermedad_box {
+      justify-content: space-between;
+      margin: 40px 0px;
+  }  
+  /*cita medica*/
+  .diary_list li {
+      width: 50%;
+      display: inline-flex;
+  }
+  .diary_flex {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 100%;
+      justify-content: space-between;
+  }
+
+  .diary_flex .form-group {
+      width: 45%;
+      margin: 30px 12px 30px -12px !important;
+  }    
+  .left-pos{
+    margin-left: -15px;
+  }  
+  .agenda-box_prod {
+      justify-content: flex-start;
+  }
+
+  .agenda-box_prod .btn-prim {
+      margin-left: 0px;
+      margin-right: 20px;
+  }
+
+}
+

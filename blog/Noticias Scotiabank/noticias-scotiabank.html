@@ -1,0 +1,576 @@
+<!-- style owl carusel  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- bootstrap select -->
+
+<style>
+
+:root{
+	--darkPrim: #000;
+	--purplePrim: #7849B8;
+	--gray: #999999;
+    --fontRegular: 'scotiaRg'; 
+    --fontBold: 'scotiaBd'; 
+}	
+
+/*fonts*/
+
+@font-face {
+  font-family: 'scotiaRg';
+  src: url('./scotia/Scotia_W_Rg.woff') format('woff'), 
+  url('./scotia/Scotia_Rg.ttf')  format('truetype'), 
+  url('./scotia/Scotia_W_Rg.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'scotiaLt';
+  src: url('./scotia/Scotia_W_Lt.woff') format('woff'), 
+  url('./scotia/Scotia_Lt.ttf')  format('truetype'), 
+  url('./scotia/Scotia_W_Lt.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'scotiaBd';
+  src:  url('./scotia/Scotia_W_Bd.woff') format('woff'), 
+  url('./scotia/Scotia_Bd.ttf')  format('truetype'), 
+  url('./scotia/Scotia_W_Bd.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/*general styles*/
+
+.fontTitle{
+    font: 26px/1.3 var(--fontBold);
+    color: var(--darkPrim); 
+}
+.fontSubTitle{
+    font: 22px/1.3 var(--fontBold);
+    color: var(--darkPrim);
+}
+.fontDestacado{
+    font: 18px/1.3 var(--fontBold);
+    color: var(--darkPrim); 
+}       
+.fontTag{
+    font: 14px/1.3 var(--fontRegular);
+    color: var(--darkPrim); 
+}       
+.fontText{
+    font: 12px/1.3 var(--fontRegular);
+    color: var(--gray);
+}   
+
+.h1, .h2, .h3, h1, h2, h3, p, span {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/*diseño de botones*/
+
+.load-more {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.load-more:before{
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 1px;
+    background: #ccc;
+}
+
+.btn-prim {
+    color: var(--purplePrim);
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px 30px;
+    margin: 20px auto;
+    display: table;
+    transition: all .3s;
+    outline: none;
+    border: 1px solid var(--purplePrim);
+    text-decoration: none;
+    z-index: 2;
+}
+.btn-prim:hover{
+    background: var(--purplePrim);
+    color: #fff;
+    outline: none;	
+    text-decoration: none;
+}
+
+/*noticias*/
+
+.noticias-block {
+    max-width: 1200px;
+    margin: 20px auto;
+    /* padding: 0 15px; */
+    display: block;
+    overflow: hidden;
+}
+
+/*titulo principal*/
+
+.not-blo_cont {
+    padding: 15px;
+    border-bottom: 1px solid #CCCCCC;
+}
+.not-dest_title {
+    padding: 15px;
+}
+.not-dest {
+    display: table;
+    margin-bottom: 20px;
+}
+.not-dest_info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.not-dest_banner img {
+    width: 100%;
+}
+.not-dest_subtitle {
+    margin: 20px 0px;
+}
+.not-dest_date {
+    margin-top: 20px;
+}
+.load-more .btn-prim{
+    font-weight: bold;
+}
+.not-sob_card {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 15px;
+}
+.not-sob_img {
+    margin-right: 15px;
+    min-width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+.not-sob > div {
+    padding: 0;
+}
+.not-vid_video {
+    width: 100%;
+}
+.not-vid_text{
+    margin: 10px 0px;
+}
+
+/*noticias interna*/
+
+.not-back {
+    margin-bottom: 20px;
+    display: table;
+    padding: 0 15px;
+}
+.not-back_sub {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.not-back_arrow {
+    color: var(--purplePrim);
+    font-size: 40px;
+    font-family: var(--fontBold);
+    margin-right: 15px;
+}
+.bnn-full {
+    margin-bottom: 30px;
+    display: table;
+}
+.bnn-full_img {
+    width: 100%;
+}
+.bnn-full_date {
+    margin: 20px 0px 0px;
+    display: table;
+}
+.bnn-full_text {
+    margin: 20px 0px;
+}
+.bnn-video_date {
+    margin-bottom: 20px;
+    display: table;
+}
+.not-rela_title {
+    padding: 0 15px;
+    margin: 20px 0px;
+}
+.not-rela_img {
+    width: 100%;
+}
+.not-rela_subtitle {
+    margin: 15px 0px 10px;
+}
+.not-rela_art {
+    margin-bottom: 20px;
+}
+.not-rela_date {
+    margin-bottom: 20px;
+    display: table;
+}
+.bnn-video{
+    width: 100%;
+    height: 200px;
+}
+.not-inner{
+    display: none;
+}
+/*estilo owl carousel*/
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
+    background: var(--purplePrim);
+}
+@media only screen and (min-width: 768px){
+
+	/*general styles*/
+
+	.fontTitle{
+		font: 36px/1.3 var(--fontBold);
+	}
+	.fontSubTitle{
+		font: 24px/1.3 var(--fontBold);
+	}
+	.fontDestacado{
+		font: 20px/1.3 var(--fontBold); 
+	}		
+	.fontTag{
+		font: 16px/1.3 var(--fontRegular); 
+	}		
+    .not-dest_flex, .not-dest_flex > div, .not-dest_info {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .not-dest_subtitle {
+        margin: 0px 0px 20px;
+    }    
+    .not-dest_info{
+        flex-direction: column;
+    }
+    .not-dest{
+        margin-bottom: 40px;
+    }
+    .not-sob_card {
+        margin-bottom: 20px;
+        margin-top: 0px;
+        padding: 0px;
+    }
+    .owl-carousel{
+        display: block;
+    }
+    #not-vid_princ iframe{
+        height: 350px;
+    }
+    .bnn-video{
+        height: 400px;
+    }    
+    .bnn-video_cont {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }    
+}
+</style>
+
+<section class="noticias-block">
+    <section class="not-outside">
+        <!-- titulo -->
+        <section class="not-blo_cont">
+             <h1 class="not-blo_sub fontTitle">Noticias</h1>
+             <p class="not-blo_text fontTag">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor</p>
+        </section>
+
+        <!-- destacado -->
+
+        <section class="not-dest">
+            <h3 class="not-dest_title fontSubTitle">Sobre el mundo de los seguros</h3>
+            <div class="not-dest_flex">
+                <div class="col-xs-12 col-sm-6 col-md-7">
+                    <div class="not-dest_banner">
+                        <img src="./img/bnn-home.png" alt="banner destacado">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-5">
+                    <div class="not-dest_info"> 
+                        <div class="not-dest_article">
+                            <h3 class="not-dest_subtitle fontDestacado">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                            <p class="not-dest_text fontTag">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra imperdiet mauris sagittis porttitor vel viverra ut velit. Nunc consequat cursus elementum, nullam lacinia ut feugiat in nulla. Duis placerat risus, habitasse scelerisque blandit turpis pellentesque. Dui pretium, ut nec dignissim mauris lacinia malesuada. Senectus tortor dictum aliquam sit morbi vitae. Massa non libero leo, commodo nulla est. Ultricies posuere dignissim eu sed adipiscing ante. Vel consectetur nisi, sed gravida.</p>
+                        </div>
+                        <span class="not-dest_date fontText">Publicada: 19/03/2020 08:00 a.m.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- noticias -->
+        <section class="not-items">
+            <div class="not-dest">
+                <div class="not-dest_flex">
+                    <div class="col-xs-12 col-sm-3">
+                        <div class="not-dest_banner">
+                            <img src="./img/des-subanner1.png" alt="banner destacado">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-9">
+                        <div class="not-dest_info"> 
+                            <div class="not-dest_article">
+                                <h3 class="not-dest_subtitle fontDestacado">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                                <p class="not-dest_text fontTag">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra imperdiet mauris sagittis porttitor vel viverra ut velit. Nunc consequat cursus elementum, nullam lacinia ut feugiat in nulla. Duis placerat risus, habitasse scelerisque blandit turpis pellentesque. Dui pretium, ut nec dignissim mauris lacinia malesuada. Senectus tortor</p>
+                            </div>
+                            <span class="not-dest_date fontText">Publicada: 19/03/2020 08:00 a.m.</span>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="not-dest">
+                <div class="not-dest_flex">
+                    <div class="col-xs-12 col-sm-3">
+                        <div class="not-dest_banner">
+                            <img src="./img/des-subanner2.png" alt="banner destacado">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-9">
+                        <div class="not-dest_info"> 
+                            <div class="not-dest_article">
+                                <h3 class="not-dest_subtitle fontDestacado">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                                <p class="not-dest_text fontTag">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra imperdiet mauris sagittis porttitor vel viverra ut velit. Nunc consequat cursus elementum, nullam lacinia ut feugiat in nulla. Duis placerat risus, habitasse scelerisque blandit turpis pellentesque. Dui pretium, ut nec dignissim mauris lacinia malesuada. Senectus tortor</p>
+                            </div>
+                            <span class="not-dest_date fontText">Publicada: 19/03/2020 08:00 a.m.</span>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="not-dest">
+                <div class="not-dest_flex">
+                    <div class="col-xs-12 col-sm-3">
+                        <div class="not-dest_banner">
+                            <img src="./img/des-subanner3.png" alt="banner destacado">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-9">
+                        <div class="not-dest_info"> 
+                            <div class="not-dest_article">
+                                <h3 class="not-dest_subtitle fontDestacado">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                                <p class="not-dest_text fontTag">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra imperdiet mauris sagittis porttitor vel viverra ut velit. Nunc consequat cursus elementum, nullam lacinia ut feugiat in nulla. Duis placerat risus, habitasse scelerisque blandit turpis pellentesque. Dui pretium, ut nec dignissim mauris lacinia malesuada. Senectus tortor</p>
+                            </div>
+                            <span class="not-dest_date fontText">Publicada: 19/03/2020 08:00 a.m.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+            <div class="load-more">
+                <a href="#" class="fontTag btn-prim">Cargar más</a>
+            </div>
+            
+        </section>
+
+
+        <!-- sección sobre ... --> 
+
+        <section class="not-sob">
+            <h3 class="not-dest_title fontSubTitle">Sobre Scotiabank Colpatria</h3>        
+            <div class="col-xs-12 col-sm-8">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="not-dest_banner">
+                        <img src="./img/des-subanner3.png" alt="banner destacado">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="not-dest_info"> 
+                        <div class="not-dest_article">
+                            <h3 class="not-dest_subtitle fontDestacado">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                            <p class="not-dest_text fontTag">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra imperdiet mauris sagittis porttitor vel viverra ut velit. Nunc consequat cursus elementum, nullam lacinia ut feugiat in nulla. Duis placerat risus, habitasse scelerisque blandit turpis pellentesque. Dui pretium, ut nec dignissim mauris lacinia malesuada. Senectus tortor</p>
+                        </div>
+                        <span class="not-dest_date fontText">Publicada: 19/03/2020 08:00 a.m.</span>
+                    </div>
+                </div>            
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="not-sob_card">
+                    <img src="./img/not-bnn-min-1.png" alt="card info" class="not-sob_img">
+                    <h3 class="not-sob_title fontDestacado">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                </div>
+                <div class="not-sob_card">
+                    <img src="./img/not-bnn-min-1.png" alt="card info" class="not-sob_img">
+                    <h3 class="not-sob_title fontDestacado">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                </div>
+                <div class="not-sob_card">
+                    <img src="./img/not-bnn-min-1.png" alt="card info" class="not-sob_img">
+                    <h3 class="not-sob_title fontDestacado">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                </div>                        
+            </div>
+            <div class="load-more">
+                <a href="#" class="fontTag btn-prim">Cargar más</a>
+            </div>
+        </section>
+
+        
+        <!-- sección video --> 
+
+        <section class="not-vid">
+            <h3 class="not-dest_title fontSubTitle">Videos</h3> 
+            <div class="col-xs-12 col-sm-6" id="not-vid_desk">
+                <div class="not-vid_cont" id="not-vid_princ">
+                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" class="not-vid_video"></iframe>
+                    <p class="not-vid_text fontTag">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et faucibus diam malesuada vitae viverra lobortis aliquet.</p>
+                </div>       
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="owl-carousel owl-theme" id="cont-carousel">
+                    <div class="not-vid_cont col-xs-12 col-sm-12 col-md-6">
+                        <iframe src="https://www.youtube.com/embed/h8jYgpgrCjM" class="not-vid_video"></iframe>
+                        <p class="not-vid_text fontTag">Lorem ipsum dolor sit met,consecteturadipiscing elit.</p>
+                    </div>
+                    <div class="not-vid_cont col-xs-12 col-sm-12 col-md-6">
+                        <iframe src="https://www.youtube.com/embed/VlMMHaLKPSY" class="not-vid_video"></iframe>
+                        <p class="not-vid_text fontTag">Lorem ipsum dolor sit met,consecteturadipiscing elit.</p>
+                    </div>
+                    <div class="not-vid_cont col-xs-12 col-sm-12 col-md-6">
+                        <iframe src="https://www.youtube.com/embed/4fQP5CisIq4" class="not-vid_video"></iframe>
+                        <p class="not-vid_text fontTag">Lorem ipsum dolor sit met,consecteturadipiscing elit.</p>
+                    </div>
+                    <div class="not-vid_cont col-xs-12 col-sm-12 col-md-6">
+                        <iframe src="https://www.youtube.com/embed/TuuF6jeLhwc" class="not-vid_video"></iframe>
+                        <p class="not-vid_text fontTag">Lorem ipsum dolor sit met,consecteturadipiscing elit.</p>
+                    </div>                                    
+                </div>
+            </div> 
+            <div class="load-more">
+                <a href="#" class="fontTag btn-prim">Cargar más</a>
+            </div>               
+        </section>        
+    </section>
+    <section class="not-inner">
+        <section class="not-back">
+             <h2 class="not-back_sub fontDestacado"><span class="not-back_arrow"><</span>Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit.</h2>
+        </section>     
+        <section class="bnn-full">
+             <img src="./img/full-bnn.png" class="bnn-full_img" alt="banner noticia interna">
+             <div class="bnn-full_cont">
+                 <div class="col-xs-12 col-sm-12 col-md-3">
+                     <span class="bnn-full_date fontText">Publicada: 19/03/2020 08:00 a.m.</span>
+                 </div>
+                 <div class="col-xs-12 col-sm-12 col-md-9">
+                     <p class="bnn-full_text fontTag">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices rhoncus, natoque in sed. Risus pellentesque malesuada amet ut arcu elementum dignissim. Elit venenatis faucibus tincidunt consectetur nibh adipiscing nunc tellus. In morbi pellentesque enim, sapien nisl lectus dictum lectus. Orci tristique vestibulum, laoreet platea. Duis sollicitudin cras fames facilisis. Purus odio volutpat libero vivamus. Pellentesque arcu, morbi penatibus cursus nunc venenatis nunc. Amet mi magna vulputate mauris nunc sociis pulvinar. Congue nisl magna euismod donec lobortis lobortis. Viverra sit tempus, at et nunc, varius faucibus. Orci sem arcu ornare duis nunc. Facilisi ac semper vestibulum, aliquet. 
+                        <br><br>Ultricies tellus imperdiet at commodo integer ac dui. Vestibulum risus, lorem quam posuere vitae scelerisque. At gravida nunc sed nisl sit augue in amet ut. Integer non ipsum turpis enim. Sed ultrices mauris, et est. Duis non hendrerit mauris fames risus. Ac cursus pellentesque non tortor aliquam urna mi. Aenean arcu etiam vel mus. Vel nibh sapien, vitae et enim purus nulla magna nisi. <br><br>Quis ultricies pretium rutrum neque id hendrerit scelerisque nunc nec. Aenean auctor aliquet diam ultrices risus quam integer congue sed. At faucibus massa nisi, non convallis. Nunc, egestas lorem nunc convallis tincidunt ornare. Diam sit cursus sem risus.                         
+                     </p>
+                 </div>
+             </div>
+             <div class="bnn-video_cont">
+                 <div class="col-xs-12 col-sm-12 col-md-3">
+                     <span class="bnn-video_date fontTag">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et faucibus diam malesuada vitae viverra lobortis aliquet.</span>
+                 </div>
+                 <div class="col-xs-12 col-sm-12 col-md-9">
+                     <iframe src="https://www.youtube.com/embed/TuuF6jeLhwc" class="bnn-video"></iframe>
+                 </div>
+             </div>             
+        </section>  
+        <section class="not-rela">
+            <h3 class="not-rela_title fontSubTitle">Noticias relacionadas</h3>
+            <div class="not-rela_cont owl-carousel owl-theme" id="not-relacionada">
+                <div class="col-xs-12 col-sm-4">
+                    <div class="not-rela_box">
+                        <img src="./img/des-subanner1.png" alt="" class="not-rela_img">
+                        <h3 class="fontDestacado not-rela_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        <p class="fontTag not-rela_art">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra imperdiet mauris sagittis porttitor vel viverra ut velit.</p>
+                        <span class="fontText not-rela_date">Publicada: 19/03/2020 08:00 a.m.</span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="not-rela_box">
+                        <img src="./img/des-subanner2.png" alt="" class="not-rela_img">
+                        <h3 class="fontDestacado not-rela_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        <p class="fontTag not-rela_art">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra imperdiet mauris sagittis porttitor vel viverra ut velit.</p>
+                        <span class="fontText not-rela_date">Publicada: 19/03/2020 08:00 a.m.</span>
+                    </div>                    
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="not-rela_box">
+                        <img src="./img/des-subanner3.png" alt="" class="not-rela_img">
+                        <h3 class="fontDestacado not-rela_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                        <p class="fontTag not-rela_art">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra imperdiet mauris sagittis porttitor vel viverra ut velit.</p>
+                        <span class="fontText not-rela_date">Publicada: 19/03/2020 08:00 a.m.</span>
+                    </div>                    
+                </div>
+            </div>
+        </section>              
+    </section>
+</section>		
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<!-- bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- bootstrap select -->
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+<!-- owl carusel --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> 
+
+<script>
+
+    function myFunction(x) {
+      if (x.matches) {
+            $("#not-vid_princ").prependTo("#cont-carousel");
+            $('#cont-carousel, #not-relacionada').owlCarousel({
+                loop:true,
+                margin:0,
+                items:1,
+                center:true,
+                responsive : {
+                    480 : {
+                        items:2
+                    },
+
+                    768 : {
+                    }
+                }                
+            }); 
+      } else {
+         $('#cont-carousel, #not-relacionada').owlCarousel('destroy');
+         $("#not-vid_princ").prependTo("#not-vid_desk");
+      }
+    }
+
+    var x = window.matchMedia("(max-width: 768px)")
+    myFunction(x) 
+    x.addListener(myFunction)
+
+    // siguiente vista
+
+    $(".btn-prim").click(function(){
+        $(".not-outside").hide();
+        $(".not-inner").fadeIn();
+    });
+
+    // anterior vista
+    
+    $(".not-back_sub").click(function(){
+        $(".not-outside").fadeIn();
+        $(".not-inner").hide();
+    });    
+</script>

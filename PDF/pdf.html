@@ -1,0 +1,122 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+<style>
+
+:root{
+    --rojo: #e30613;
+    --colorTextos: #232120;
+    --azul: #00a3e2;
+    --verde: #009576;
+    --violeta: #6f66ac;
+    --rosado: #e36da6;
+    --naranja: #ed6d41;
+    --tipografia: 'scotiaRg' ;
+    --tipoBold: 'scotiaBd';
+    --tipoLight: 'scotiaLt';
+}
+/** @group variables, fonts, types and generals **/
+
+
+.comp-pdf {
+    width: 100%;
+    min-width: 1190px;
+    margin: 0 auto;
+    display: table;
+}
+ .hidePdf{
+    visibility: hidden;
+    position: absolute;    	
+} 
+.comp-pdf_img{
+    width: 97%;
+}
+.path-pdf{
+    display: table;
+    min-width: 1190px !important;
+	position: relative;
+	margin: 0 auto;
+}
+.comp-pdf > div {
+    background: #fff;
+    margin: 0 auto;
+    display: block;    
+}
+.comp-pdf_img-footer {
+    width: 100%;
+}    
+.formFloat{
+	position: absolute;
+	z-index: 1;
+	top: 0;
+}
+.nameFloat {
+    position: relative;
+    margin-left: 386px;
+    top: 8px;
+    border: none;
+    background: #f4f4f4;
+    height: 24px;
+    width: 400px;
+    color: #000;
+}
+</style>
+
+
+<button class="btn btn-success" id="exportForm">Export page</button>	 
+
+<div class="container comp-pdf" id="comp-pdf">
+	  <div id="first-page">
+	  	  <div class="path-pdf">
+	  	  	<img src="https://firebasestorage.googleapis.com/v0/b/tdah-8888.appspot.com/o/basura%2Ftitle.svg?alt=media&token=621001ac-4d86-4a9d-b77e-dde2e3f03d15" alt="part1" class="comp-pdf_img">
+	  	  </div>	  	
+	  	  <div class="path-pdf">
+	  	  	<img src="https://firebasestorage.googleapis.com/v0/b/tdah-8888.appspot.com/o/basura%2FPag1.svg?alt=media&token=948cdf5e-9fef-434d-805c-99bb2f78975c" alt="part1" class="comp-pdf_img">
+	  	  </div>
+	  	  <div class="path-pdf">
+		  	<img src="https://firebasestorage.googleapis.com/v0/b/tdah-8888.appspot.com/o/basura%2FPagg2.svg?alt=media&token=ccb203b6-be59-43a1-a1fc-1d3e8fd67058	" alt="part1" class="comp-pdf_img">
+	  	  </div>
+	  	  <div class="path-pdf">
+		  	<img src="https://firebasestorage.googleapis.com/v0/b/tdah-8888.appspot.com/o/basura%2FPagg3.svg?alt=media&token=84d58e26-2a01-4507-8d32-ecd5e130d5fd" alt="part1" class="comp-pdf_img">
+		  	<form action="#" class="formFloat">
+		  		<input type="text" class="nameFloat">
+		  	</form>
+	  	  </div>
+	  	  <div class="path-pdf">
+		  	<img src="https://firebasestorage.googleapis.com/v0/b/tdah-8888.appspot.com/o/basura%2FPagg4.svg?alt=media&token=4a2fb52b-6ab4-477b-a4d2-7af308e1da25" alt="part1" class="comp-pdf_img comp-pdf_img-footer">
+	  	  </div>
+	  </div>
+	  <div id="second-page" class="page">
+	  	<div class="path-pdf">
+	  	  <img src="https://firebasestorage.googleapis.com/v0/b/tdah-8888.appspot.com/o/basura%2FPag2.svg?alt=media&token=614f4635-684b-424a-b59e-5da4b8801b14" alt="part2" class="comp-pdf_img comp-pdf_img-footer">
+	  	</div>  
+	  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$('#exportForm').click(function(){
+	  var pdf = new jsPDF('a', 'mm', 'a4');
+	  var firstPage;
+	  var secondPage;
+	  
+	  html2canvas($('#first-page'), {
+	    onrendered: function(canvas) {
+	      firstPage = canvas.toDataURL('image/jpeg', 1.0);
+	    }
+	  });
+	  
+	  html2canvas($('#second-page'), {
+	    onrendered: function(canvas) {
+	      secondPage = canvas.toDataURL('image/jpeg', 1.0);
+	    }
+	  });
+	  
+	  
+	  setTimeout(function(){
+	    pdf.addImage(firstPage, 'JPEG', -35, 5, 280, 0);
+	    pdf.addPage();
+	    pdf.addImage(secondPage, 'JPEG', -35, 5, 285, 0);
+	    pdf.save("export.pdf");
+	  }, 150);
+  });
+</script>
