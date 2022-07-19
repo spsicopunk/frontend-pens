@@ -11,8 +11,8 @@
 ### Tabla de contenido
 - [Descripción](#descripción)
 - [Requerimientos Básicos](#descripción)
-- [Instalando entorno de desarrollo](#Instalando_entorno_de_desarrollo)
-- [Donde empiezo?](#módulos)
+- [Instalando entorno de desarrollo](#Instalandoentornodedesarrollo)
+- [Donde empiezo?](#Donde_empiezo?)
 - [Un poco de contexto](#Un_poco_de_contexto)
 - [Componentes](#Componentes)
 - [Contribuyendo](#contribuyendo)
