@@ -11,13 +11,17 @@
 ### Tabla de contenido
 - [Descripción](#descripción)
 - [Requerimientos Básicos](#descripción)
-- [Instalando entorno de desarrollo](#módulos)
+- [Instalando entorno de desarrollo](#Instalando_entorno_de_desarrollo)
 - [Donde empiezo?](#módulos)
+- [Un poco de contexto](#Un_poco_de_contexto)
+- [Componentes](#Componentes)
 - [Contribuyendo](#contribuyendo)
-- [Versionado](#versionado)
-- [Publicar](#publicar)
-- [Registro de cambios](#registrodecambios)
-- [Hoja de ruta](#hojaderuta)
+- [Versionamiento](#Versionamiento)
+- [Desarrollo](#Desarrollo)
+- [Despliegue](#Despliegue)
+- [Publicación](#Publicación)
+- [Changelog](#Changelog)
+- [Roadmap](#Roadmap)
 
 ## Descripción
 
@@ -49,9 +53,8 @@ Este frontend tiene como proposito ser la guia visual de los indicadores de rend
 
 ### Componentes
 
-* [AlertCustomThreshold](app/components/AlertCustomThreshold): paquete con constantes comunes y específicas para insurtech
-* [Utils](packages/utils/README.md): paquete con funciones utils
-  * [Comunes - dispositivo](packages/utils/README.md#commons---device): mapa de información del dispositivo
+* ``` AlertCustomThreshold ``` componente encargado de mostrar alertas al guardar cambios en las notificaciones
+* ``` Behavior ``` componente que visualiza en el home el total de aplicaciones en **Above** o **Below**
 
 ### Contribuyendo
 
@@ -66,7 +69,7 @@ Sin embargo, si ve algo que no está bien o necesita una nueva función, siga es
 
 Si estas colaborando el proyecto frontend mantra debes seguir los lineamiento del [Libflow](https://furydocs.io/release-proess/4.9.0/guide/#/lang-es/workflows/04_libflow) para el control de versiones en este proyecto.
 
-### Desarrollar
+### Desarrollo
 
 Para desarrollar una nueva función, debe
 
@@ -83,7 +86,7 @@ Para desarrollar una nueva función, debe
 
 **NOTA**: No olvide agregar una descripción de registro de cambios para cada paquete (siga los ejemplos actuales)
 
-### Desplegar
+### Desplegue
 Teniendo en cuenta que los cambios sean correctos se debe:
 
 * Crear un pull request desde la rama modificada con base de **Develop** y pedir la aprobación de algún colaborador del proyecto
@@ -92,7 +95,7 @@ Teniendo en cuenta que los cambios sean correctos se debe:
 * Si todo esta tal cual se subio a la rama Develop no hay necesidad de pedir un **Review de los cambios**, pero si se hacen ajustes en la rama **Release** se debe pedir Review nuevamente.
 * Una vez mezclado con Master y develop se debe eliminar las ramas con nomenclatura backport
 
-### Publicar
+### Publicación
 
 * Finalmente se debe anunciar la nueva característica en una nota de workplace ([Un ejemplo de publicación](https://meli.workplace.com/notes/161486316270466/)) y esa publicación notificarla en [Help Mantra](https://meli.slack.com/archives/C016GDSQAHG) en el caso que sea una caracteristica nueva. 
 
