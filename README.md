@@ -11,9 +11,9 @@
 ### Tabla de contenido
 - [Descripción](#descripción)
 - [Requerimientos Básicos](#descripción)
-- [Instalando entorno de desarrollo](#Instalandoentornodedesarrollo)
-- [Donde empiezo?](#Donde_empiezo?)
-- [Un poco de contexto](#Un_poco_de_contexto)
+- [Instalando entorno de desarrollo](#Instalando-entorno-de-desarrollo)
+- [Donde empiezo?](#Donde-empiezo?)
+- [Un poco de contexto](#Un-poco-de-contexto)
 - [Componentes](#Componentes)
 - [Contribuyendo](#contribuyendo)
 - [Versionamiento](#Versionamiento)
@@ -104,7 +104,7 @@ Teniendo en cuenta que los cambios sean correctos se debe:
 Breve o especie de hoja de ruta 
 * Mantra v2.0 [Presentación]([https://docs.google.com/presentation/d/1R87rG1bxliJW1nlM4XRMxSdf90mg3qKMeaLDpMTxcr0/edit#slide=id.g71959900f1_0_159).
 
-### Registro de cambios
+### Changelog
 
 Mantenemos los cambios en nuestro código base [aquí](CHANGELOG.md)
 
