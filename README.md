@@ -12,10 +12,10 @@
 - [Descripción](#descripción)
 - [Requerimientos Básicos](#descripción)
 - [Instalando entorno de desarrollo](#Instalando-entorno-de-desarrollo)
-- [Donde empiezo?](#Donde-empiezo?)
+- [Donde empiezo?](#Donde-empiezo)
 - [Un poco de contexto](#Un-poco-de-contexto)
 - [Componentes](#Componentes)
-- [Contribuyendo](#contribuyendo)
+- [Contribuyendo](#Contribuyendo)
 - [Versionamiento](#Versionamiento)
 - [Desarrollo](#Desarrollo)
 - [Despliegue](#Despliegue)
@@ -40,7 +40,7 @@ Este frontend tiene como proposito ser la guia visual de los indicadores de rend
   $ cd fury_frontend-mantra
   $ npm install
  ```
-### Donde empiezo?
+### Donde empiezo
   - ```npm run build```: comando usado para compilar el artefacto por primera vez 
   - ```npm run watch:``` es usado para ejecutar el comando build en todo momento 
   - **(En otro tab de la terminal ejecutar):** ``` npm run start-dev```: usado para correr el servidor de pruebas
@@ -86,7 +86,7 @@ Para desarrollar una nueva función, debe
 
 **NOTA**: No olvide agregar una descripción de registro de cambios para cada paquete (siga los ejemplos actuales)
 
-### Desplegue
+### Despliegue
 Teniendo en cuenta que los cambios sean correctos se debe:
 
 * Crear un pull request desde la rama modificada con base de **Develop** y pedir la aprobación de algún colaborador del proyecto
